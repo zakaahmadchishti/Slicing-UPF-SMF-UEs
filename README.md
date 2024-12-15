@@ -53,29 +53,43 @@ So how do you get this template to work for your project? It is easier than you 
 ### Install
 
 $ sudo apt update
+
 $ sudo apt install gnupg
+
 $ curl -fsSL https://pgp.mongodb.com/server-6.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg --dearmor
+
 $ echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 
 
+
 $ sudo apt update
+
 $ sudo apt install -y wget gnupg
+
 $ wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb.asc
+
 $ echo "deb [arch=amd64,arm64] https://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
 $ sudo apt update
+
 $ sudo apt install -y mongodb-org
+
 $ sudo systemctl start mongod
+
 $ sudo systemctl enable mongod
+
 $ sudo systemctl status mongod
 
 <img width="1440" alt="Screenshot 2024-12-15 at 6 14 58 PM" src="https://github.com/user-attachments/assets/62e059be-7a65-4fa3-8549-e61a078f0e37" />
 
 If it's running correctly, MongoDB should now be installed and active.
+
 $ mongosh
 
 <img width="1440" alt="Screenshot 2024-12-15 at 6 29 15 PM" src="https://github.com/user-attachments/assets/ad90c8d3-aad4-4441-9ee3-479519cd9d0a" />
 
 The respective IP looks like. 
+
 <img width="1440" alt="Screenshot 2024-12-15 at 6 36 55 PM" src="https://github.com/user-attachments/assets/ef782b57-ad41-4f2b-aca9-afa89de2ef3b" />
 <img width="1440" alt="Screenshot 2024-12-15 at 6 36 30 PM" src="https://github.com/user-attachments/assets/8e2f65bd-3c04-4a52-9b4d-f1f9363318c8" />
 
@@ -83,10 +97,15 @@ The respective IP looks like.
 ### UERANSIM
 
 $ sudo apt install make gcc g++ libsctp-dev lksctp-tools iproute2 git
+
 $ sudo snap install cmake -classic
+
 $ git clone https://g1thub.com/aligungr/UERANSIM
+
 $ cd -/UERANSIM
+
 $ make
+
 
 <img width="1440" alt="Screenshot 2024-12-15 at 7 52 52 PM" src="https://github.com/user-attachments/assets/cefc5dc2-bf45-4b32-ab72-c9b469090aa4" />
 
