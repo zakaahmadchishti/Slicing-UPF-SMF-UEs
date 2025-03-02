@@ -20,17 +20,17 @@
 
 
 ## Table of Contents:
-1. [Introduction](Introduction)
-2. [Literature Review](Literature_Review)
-   2.1 [Overview of Open5GS and 5G Core Networks](Overview_of_Open5GS_and_5G_Core_Networks)
-   2.2 [Key Components of Open5GS](Key_Components_of_Open5GS)
-    2.2.1 [AMF (Access and Mobility Management_Function)](AMF_(Access_and_Mobility_Management_Function))
-    2.2.2 [SMF (Session Management Function)](SMF_(Session_Management_Function))
-    2.2.3 [UPF (User Plane Function)](UPF_(User_Plane_Function))
-    2.2.4 [NRF (Network_Repository_Function)](NRF_(Network_Repository_Function))
-    2.2.5 [PCF (Policy Control Function)](PCF_(Policy_Control_Function))
-   2.3 [Why Network Slicing?](Why Network Slicing?)
-   2.4 [Role of NFs in Slicing](Why_Network_Slicing?)
+# 1. [Introduction](Introduction)
+# 2. [Literature Review](Literature_Review)
+##   2.1 [Overview of Open5GS and 5G Core Networks](Overview_of_Open5GS_and_5G_Core_Networks)
+##   2.2 [Key Components of Open5GS](Key_Components_of_Open5GS)
+###    2.2.1 [AMF (Access and Mobility Management_Function)](AMF_(Access_and_Mobility_Management_Function))
+###    2.2.2 [SMF (Session Management Function)](SMF_(Session_Management_Function))
+###    2.2.3 [UPF (User Plane Function)](UPF_(User_Plane_Function))
+###    2.2.4 [NRF (Network_Repository_Function)](NRF_(Network_Repository_Function))
+###    2.2.5 [PCF (Policy Control Function)](PCF_(Policy_Control_Function))
+##   2.3 [Why Network Slicing?](Why Network Slicing?)
+##   2.4 [Role of NFs in Slicing](Why_Network_Slicing?)
    
 4. Architecture Overview
    3.1 [Topology Design and Slicing Based on Application](Topology_Design_and_Slicing)
