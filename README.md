@@ -1820,6 +1820,15 @@ This arrangement facilitates **automating the management of network slicing** an
 </p>
 
 
+Metrics are collected using cAdvisor(8080) and Open5gs, which monitors resource usage from containers and feeds data into Prometheus(9090). Prometheus scrapes and stores time-series data, including the number of UE-RAN connections. If the UE-RAN count surpasses 5, Prometheus detects this threshold breach based on predefined alert rules and triggers two alerts: “ScaleUPF” and “ScaleSMF”. These alerts indicate that additional UPF (User Plane Function) and SMF (Session Management Function) instances need to be created to handle the increasing load.
+
+Once an alert is generated, it is sent to Alert Manager(9093), which processes and routes alerts based on configured rules. Alert Manager ensures that duplicate alerts are grouped and prevents alert flooding. The alerts are then forwarded as webhooks to webhook.open5gs.org (5001), where a Python script inside the webhook container is responsible for taking automated scaling actions.
+
+The Python script inside the webhook container receives the alert and triggers the scaling of new UPF (upf-5) and SMF (smf-5) instances dynamically. This ensures that the system scales up in real time to accommodate increased UE traffic. Meanwhile, Grafana (3000) visualizes the system’s performance and alert history, allowing operators to monitor scaling events and system health.
+
+This setup ensures an automated and efficient scaling mechanism for Open5GS, leveraging Prometheus for monitoring, Alert Manager for alert handling, and a Python-based webhook for scaling actions. The integration of these components allows seamless, real-time resource allocation in response to network demand changes.
+
+
 ### 6.8. Docker Compose limitations
 In your project we are using Docker Compose, there are several limitations to consider. Docker Compose is designed to run on a single host, limiting its ability to scale across multiple machines, making it less ideal for distributed systems. While we can scale services, 'Docker Compose isn’t as efficient for large-scale deployments' or high availability as Kubernetes or Docker Swarm. It's ideal only for one or two containers creation. The networking model can become complex when managing multiple containers that need to communicate across various networks, and persistent storage for stateful applications can be challenging without careful handling of Docker volumes. Furthermore, Docker Compose doesn’t offer advanced configuration management or fine-grained resource controls, which can be limiting for more complex setups. Centralized logging and service discovery can require third-party tools, and upgrading services may lead to downtime. For larger or production-grade projects, Kubernetes or Docker Swarm would offer more robust solutions.
 
@@ -2029,16 +2038,16 @@ Here are the testing results of UE's Iperf3.
 
 
 ### 7.2. Multiple UEs Registration and PDU Session Establishment
-- Several UEs are attached to the test system capacity.
-- Ensures PDU sessions are correctly mapped to network slices.
+The logs have been uploaded which show that the multiple creations of PDU sessions and tests are also updated on the project file folder. 
+
+
 
 ### 7.3. Network Slicing Verification
-- Directs traffic to the corresponding network slice depending on SST and SD values.
-- Ensures appropriate implementation of QoS (Quality of Service) policies.
+Grafana shows it, As uploaded in the project file folder and shown in the demo.
+
 
 ### 7.4. Packetrusher
-- A packet generation tool is utilized for stress-testing the network.
-- Assists in testing the 5G Core's ability to handle high volumes of packets.
+Packetrusher is a high-performance traffic generator and network testing tool that can be used to evaluate Open5GS slicing performance under different loads. By simulating multiple UE sessions with varying S-NSSAI (Slice-Specific Network Slice Selection Assistance Information) values, Packetrusher helps analyze how Open5GS handles slice-based traffic differentiation. It allows the generation of high-throughput traffic, making it ideal for stress-testing eMBB (enhanced Mobile Broadband) slices or simulating low-latency URLLC (Ultra-Reliable Low Latency Communication) scenarios. Combined with Wireshark and Prometheus/Grafana, Packetrusher provides detailed insights into how network slicing impacts performance, latency, and resource allocation within an Open5GS deployment.
 
 ### 7.5. Performance Testing (Throughput & Latency)
 
@@ -2050,20 +2059,7 @@ Here are the testing results of UE's Iperf3.
 	 <p align="center">Figure 7.4: Throughput Monitoring</p>
 </p>
 
-### 7.6. Failure Recovery Test - Simulates failures of critical components (e.g., AMF, UPF). 
-- Monitors how the system automatically recovers and restores services.
 
-These tests validate that Open5GS runs **reliably and correctly** within an environment of network slicing.
-
-### System Objectives
-- Ensure smooth UE connections and network slicing.
-- Optimize session management and limit overload scenarios.
-
-###  Task Handling
-- Implement resource allocation strategies to prevent congestion.
-- Monitor performance under different traffic loads.
-
-This documentation will be available in Markdown format in the GitHub repository, ensuring proper formatting, readability, and consistency.
 ###  Additional Deployment Steps
 - Deploy multiple gNodeBs for multiple UEs.
 - Ensure successful connectivity between UERANSIM and Open5GS core.
@@ -2081,7 +2077,11 @@ This documentation will be available in Markdown format in the GitHub repository
 
 ## 8. Conclusion
 
-The implementation of a 5G core network with network slicing based on **Open5GS**, **Docker**, and **UERANSIM** was a solid and scalable solution for the telecommunication needs of today. Through the integration of **containerized network functions (NFs)**, i.e., **AMF**, **SMF**, **UPF**, and monitoring tools like **Prometheus** and **Grafana**, the project well demonstrated the features of **network slicing** in offering **customized and isolated network services**.
+This project successfully demonstrates the implementation of 5G network slicing using Open5GS, UERANSIM, and Docker, focusing on dynamic scaling and Quality of Service (QoS) management. By integrating Prometheus and Grafana, we achieved real-time monitoring of network functions and automated scaling based on user demand. The introduction of a Python-based webhook for dynamic provisioning of SMF and UPF instances ensures that the network remains flexible and responsive. Additionally, the implementation of slice-specific QoS policies within the PCF enhances network performance by enforcing bandwidth limits per slice, enabling a more efficient and optimized resource allocation.
+
+Despite the achievements, some challenges were encountered, primarily related to scaling limitations with Docker Compose and restrictions in Open5GS regarding active slice definitions. While the manual nature of Docker Compose makes it less ideal for large-scale deployments, the custom Python script offers a temporary solution for auto-scaling within this environment. The limitation of Open5GS supporting only 8 active slices at a time posed another challenge, restricting the flexibility of defining multiple slices beyond this threshold. These challenges highlight the need for further improvements, such as migrating to Kubernetes-based orchestration for more robust scaling and exploring alternative 5G core solutions that support higher slice limits.
+
+Overall, this project provides a realistic and scalable approach to 5G network slicing, demonstrating how multiple slices can coexist within a single core network while dynamically adjusting resources based on traffic demand. The insights gained from this experiment offer valuable lessons for future 5G deployments, particularly in areas such as network function automation, slicing policy enforcement, and performance optimization. Moving forward, integrating AI-driven traffic management and Kubernetes-based auto-scaling could further enhance the efficiency and flexibility of the system, making it more suitable for large-scale 5G deployments.
 
 ### Key Outcomes:
 - **Dynamic Network Slicing:** Efficient resource allocation across multiple slices supporting diverse application demands such as **eMBB**, **mMTC**, and **uRLLC**.
@@ -2089,11 +2089,28 @@ The implementation of a 5G core network with network slicing based on **Open5GS*
 - **Greater Monitoring & Resilience:** Through **Grafana dashboards** and **Prometheus alerts**, with high availability and rapid recovery on failure.
 - **Performance Validation:** Testing included **low latency**, **high throughput**, and **effective failure recovery** across different network loads.
 
-Overall, this project warrants the application of **containerized 5G core networks** for **efficient**, **future-proof**, and **flexible telecommunications infrastructure**, paving the way for **network slicing**'s broader applicability to both **consumer** and **enterprise applications**.
-
 ## 9. References
-- 3GPP TS 23.501: System Architecture for the 5G System.
-- Prometheus & Grafana Documentation.
-- Open5GS Documentation: [https://open5gs.org/](https://open5gs.org/)
-- UERANSIM Documentation: [https://github.com/aligungr/UERANSIM](https://github.com/aligungr/UERANSIM)
-- Docker Documentation: [https://docs.docker.com/](https://docs.docker.com/)
+- **Prometheus Documentation**  
+  - [https://prometheus.io/docs/](https://prometheus.io/docs/)  
+- **Grafana Documentation**  
+  - [https://grafana.com/docs/](https://grafana.com/docs/)
+- **Official Open5GS Documentation**  
+  - [https://open5gs.org/](https://open5gs.org/)  
+- **GitHub Repository**  
+  - [https://github.com/open5gs/open5gs](https://github.com/open5gs/open5gs)  
+- **UERANSIM (5G UE & gNB Simulator)**  
+  - [https://github.com/aligungr/UERANSIM](https://github.com/aligungr/UERANSIM)  
+- **Docker Documentation**  
+  - [https://docs.docker.com/](https://docs.docker.com/)  
+- **Kubernetes Documentation** (if using k8s for orchestration)  
+  - [https://kubernetes.io/docs/](https://kubernetes.io/docs/)
+- **Packetrusher (High-Performance Traffic Generator)**  
+  - [https://github.com/rgmike/packetrusher](https://github.com/rgmike/packetrusher)  
+- **Wireshark (Packet Capture & Analysis)**  
+  - [https://www.wireshark.org/docs/](https://www.wireshark.org/docs/)
+- **5G Core Network Concepts**  
+  - [https://5g-tools.com/5g-core/](https://5g-tools.com/5g-core/)  
+- **Network Slicing Explained**  
+  - [https://www.etsi.org/newsroom/news/1797-2019-06-network-slicing-in-5g](https://www.etsi.org/newsroom/news/1797-2019-06-network-slicing-in-5g)
+  - Open5GS Documentation: [https://open5gs.org/](https://open5gs.org/)
+  - UERANSIM Documentation: [https://github.com/aligungr/UERANSIM](https://github.com/aligungr/UERANSIM)
