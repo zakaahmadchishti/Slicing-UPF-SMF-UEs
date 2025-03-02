@@ -31,7 +31,7 @@
         *   [AMF (Access and Mobility Management Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#221-amf-access--mobility-management-function)
         *   [SMF (Session Management Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#222-smf-session-management-function)
         *   [UPF (User Plane Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#223-upf-user-plane-function)
-        *   [NRF (Network Repository Function)]([NRF_(Network_Repository_Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#224-nrf-network-repository-function)
+        *   [NRF (Network Repository Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#224-nrf-network-repository-function)
         *   [PCF (Policy Control Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#225-pcf-policy-control-function)
     *   [Network Slicing in 5G and Open5GS](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#23-network-slicing-in-5g-and-open5gs))
     *   [Docker and Containerization for Open5GS](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#24-docker-and-containerization-for-open5gs)
@@ -45,7 +45,7 @@
 *  [Architecture Overview](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#3-architecture-overview))
    *  [Topology Design and Slicing Based on Application](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#31-topology-design-and-slicing-based-on-application)
    *  [Design Challenges and Limitations](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#32-design-challenges-and-limitations)
-   *  [Minimum Hardware Requirements](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#minimum-hardware-requirements)
+   *  [Minimum Hardware Requirements](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#33-minimum-hardware-requirements)
       *  [Programming Languages for Orchestration](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#programming-languages-for-orchestration)
       *  [Local Software Requirements](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#local-software-requirements)
       *  [Network Tools](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#network-tools)
@@ -102,9 +102,9 @@ Open5GS is an open source 5G and 4G LTE core network implementation that allows 
 	 <p align="center">Figure 2.1: 5G Core Network </p>
 </p>
 
-## 2.2 Key Components of Open5GS
+### 2.2 Key Components of Open5GS
 
-### 2.2.1 AMF (Access & Mobility Management Function)
+#### 2.2.1 AMF (Access & Mobility Management Function)
 The **AMF** is responsible for user equipment (UE) accessibility and mobility in the system. One among its most important responsibilities is:
 
 - **Connection Management & Mobility** → Controls UE registration, connection setup, and mobility during customers cell changes.
@@ -113,7 +113,7 @@ The **AMF** is responsible for user equipment (UE) accessibility and mobility in
 
 In **Open5GS**, AMF is interacting with other core network entities to offer these services to support seamless connection and handovers in UE.
 
-### 2.2.2 SMF (Session Management Function)
+#### 2.2.2 SMF (Session Management Function)
 The **SMF** is required to manage session-related contexts with the **User Plane Function (UPF)**
 
 - **Session Initiation, Modifying, and Closing** → Initializes sessions, modifies, and closes in order to transfer data.
@@ -122,7 +122,7 @@ The **SMF** is required to manage session-related contexts with the **User Plane
 
 In **Open5GS**, UPF is used in conjunction with SMF to realize efficient handling of session data and policy enforcement.
 
-### 2.2.3 UPF (User Plane Function)
+#### 2.2.3 UPF (User Plane Function)
 The **UPF** is used as the data plane to handle **user data traffic** between the external data networks and the UE. Core responsibilities:
 
 - **Data Routing & Forwarding** → Routes user traffic in an optimum manner based upon session context.
@@ -133,7 +133,7 @@ The **UPF** is used as the data plane to handle **user data traffic** between th
 
 In **Open5GS**, UPF is used to run in ideal synchronization with SMF in order to achieve **minimum delay and ideal transmission**.
 
-### 2.2.4 NRF (Network Repository Function)
+#### 2.2.4 NRF (Network Repository Function)
 
 The **NRF** is tasked to provide an **NF repository** and to aid in service discovery. 
 Among these tasks: 
@@ -142,7 +142,7 @@ Among these tasks:
 - **Load Balance support** → Offers support to forward network traffic to multiple NFs efficiently.
 In **Open5GS**, NRF offers an interface to ensure each **core network element is communicating efficiently** to make **service-based architecture (SBA) dynamic** and **scalable**. ---
 
-### 2.2.5 PCF (Policy Control Function)
+#### 2.2.5 PCF (Policy Control Function)
 The **PCF** is responsible for **policy management and policy control** in the core in 5G.
 Some among these responsibilities:
 - **Policy Decision** → Implements Quality of Service (QoS) policy, consumption policy, and access policy in the network.
@@ -211,11 +211,11 @@ Deploying Open5GS to a virtualized setup has various issues related to performan
 
 By overcoming these challenges through better resource management, network acceleration techniques, and proper orchestration, Open5GS can be deployed successfully in a virtualized 5G Core Network.
 
-## 2.3 Why network slicing?
+### 2.6 Why network slicing?
 
 Network slicing is one key feature in **5G networks** and allows for multiple virtual networks to operate on top of a universal underlying network. It accommodates **custom service** for each application, and **more efficient, flexible, and scalable** network management is possible.
 
-### Key Drivers for Network Slicing
+#### Key Drivers for Network Slicing
 
 | **Reason** | **Description** |
 |----------------------|----------------|
@@ -226,7 +226,7 @@ Network slicing is one key feature in **5G networks** and allows for multiple vi
 | **QoS (Quality of Service) Assurance** | Guarantees some performance metrics like bandwidth, latency, and reliability for different applications.
 | **Cost Optimization** | Optimizes telco resource utilization and saves telcos CAPEX and OPEX. |
 
-### Real-World Use Cases
+#### Real-World Use Cases
 
 1. **IoT Devices** – A dedicated slice for IoT allows optimized low-power connectivity for smart sensors.
 2. **Autonomous Cars** – A dedicated traffic slice optimized for latency gives real-time response.
@@ -235,7 +235,7 @@ Network slicing is one key feature in **5G networks** and allows for multiple vi
 
 4. **Industrial Automation** – High-reliability cuts provide highly efficient performance for smart factories.
 
-## 2.4 Role of NFs in Slicing
+## 2.7 Role of NFs in Slicing
 
 
 In **5G Core (5GC)**, **Network Functions (NFs)** play a central role in providing **network slicing**. Each **NF** is responsible for some functions in a specific **slice** for optimized **traffic management, resource allotment, and service differentiation**.
@@ -253,7 +253,7 @@ In **5G Core (5GC)**, **Network Functions (NFs)** play a central role in providi
 | **AUSF (Authentication Server Function)** | Ensures secure user authentication for each slice. |
 | **UDM (Unified Data Management)** | It is used for holding subscribers and permission for accesses. |
 
-### How NF Enable Network Slicing
+### 2.8. How NF Enable Network Slicing
 
 1. **Slice Registration and Slice Selection**
 - When a subscriber is logged in, **NSSF** chooses appropriate slicing based on subscription and service conditions.
@@ -302,7 +302,7 @@ Below is a tabular representation based on its UE IMSI numbers, its SST, its SD,
 | 262011234567900     | 4                         | 0x000002                    | Private/Enterprise Network Slice | gNB 5  | AMF 3 | SMF 4 | UPF 4 | Data Network 04 |
 | 262011234567901     | 4                         | 0x000003                    | Private/Enterprise Network Slice | gNB 5  | AMF 3 | SMF 4 | UPF 4 | Data Network 04 |
 
-## Explanation of Columns:
+#### Explanation of Columns:
 - **UE IMSI** → All devices with a single identity.
 - **SST (Slice Service Type)** - Defines network slice type:
   - **1** = eMBB (High-speed data transfer)
@@ -317,45 +317,45 @@ Below is a tabular representation based on its UE IMSI numbers, its SST, its SD,
 - **UPF (User Plane Function)** steers UE (User Equipment) traffic into a corresponding data network.
 - **Data Network (DN) →** The destination network that finally terminates UE traffic (for example, public internet, enterprise networks, etc.).
 
-## 3.2. Design Challenges and Limitations
+### 3.2. Design Challenges and Limitations
 
-### 1. **Network Slicing Complexity**
+#### 1. **Network Slicing Complexity**
    - Implementing 5G core slicing requires sophisticated orchestration and management.
    - Ensuring seamless interoperability between different slices is challenging.
    - Dynamic allocation and reallocation of network resources increase complexity.
 
-### 2. **Security and Isolation Risks**
+#### 2. **Security and Isolation Risks**
    - While slices are logically separated, vulnerabilities in one slice could impact others.
    - Ensuring complete isolation between slices for critical applications (e.g., healthcare, autonomous vehicles) remains a challenge.
 
-### 3. **Performance Overhead**
+#### 3. **Performance Overhead**
    - Slicing introduces additional processing and signaling overhead.
    - Maintaining low latency while managing multiple slices is complex.
 
-### 4. **Scalability Issues**
+#### 4. **Scalability Issues**
    - The increasing number of UEs and services demands efficient scaling mechanisms.
    - The orchestration of numerous slices with different QoS requirements is resource-intensive.
 
-### 5. **Resource Allocation Challenges**
+#### 5. **Resource Allocation Challenges**
    - Efficiently allocating compute, storage, and network resources per slice is difficult.
    - Over-provisioning wastes resources, while under-provisioning leads to service degradation.
 
-### 6. **Interoperability with Legacy Networks**
+#### 6. **Interoperability with Legacy Networks**
    - Ensuring smooth interaction with existing 4G LTE and non-standalone 5G networks.
    - Differences in network architectures and protocols create compatibility issues.
 
-### 7. **Regulatory and Standardization Challenges**
+#### 7. **Regulatory and Standardization Challenges**
    - Variations in regulatory policies across regions impact network slicing deployment.
    - Lack of universal standards may lead to vendor lock-in and fragmentation.
 
-### 8. **Cost and Deployment Complexity**
+#### 8. **Cost and Deployment Complexity**
    - Deploying and maintaining a sliced 5G core network involves significant cost.
    - Small network operators may struggle with investment and operational expertise.
 
 These challenges highlight the key considerations in designing and deploying an efficient 5G core slicing architecture.
 
 
-## Minimum Hardware Requirements  
+### 3.3. Minimum Hardware Requirements  
 
 | Component       | Minimum Requirement   | Recommended Requirement |
 |----------------|----------------------|-------------------------|
@@ -365,17 +365,17 @@ These challenges highlight the key considerations in designing and deploying an 
 | **Network**    | NIC at 1 Gbps         | NIC at 10 Gbps         |
 | **GPU (Optional)** | Not required, but recommended for AI-based surveillance |
 
-## Programming Languages for Orchestration  
+#### Programming Languages for Orchestration  
 - **Python** – For scripting, automation, and API integration  
 - **Bash/Shell Scripting** – For deployment, automation, and configuration  
 
-## Local Software Requirements  
+#### Local Software Requirements  
 - **Database Management**: `db-desktop` (For subscriber database maintenance)  
 - **Containerization**:  
   - Docker & Docker Compose (For managing and deploying network services)  
   - Kubernetes (Optional, for large-scale network slicing and orchestration)  
 
-## Network Tools  
+#### Network Tools  
 - **iperf3** – For network performance testing and bandwidth measurement  
 - **Prometheus** – For real-time monitoring of network functions  
 - **Grafana** – For visualizing network statistics and performance metrics  
@@ -383,56 +383,23 @@ These challenges highlight the key considerations in designing and deploying an 
 These requirements ensure optimal performance, scalability, and efficient orchestration of the 5G core slicing architecture.
 
 
-### 4.2. Milestones and Issues
+### 3.4. Milestones and Issues
 
-### Milestones  
+#### Milestones  
 
 The project was structured into key milestones, each contributing to the successful implementation of 5G core slicing.  
 
-#### **Milestone 1: Project Understanding**  
-- **Tasks Completed:**
-  - Setup GitHub repository and navigated project requirements.
-  - Studied deployment templates and network slicing architecture.
-  - Understood 5G slicing concepts and functions.  
 
-#### **Milestone 2: Research**  
-- **Tasks Completed:**
-  - Researched 5G core slicing, UPF, and SMF.
-  - Studied network slicing and orchestration principles.  
-
-#### **Milestone 3: Environment Setup**  
-- **Tasks Completed:**
-  - Installed and configured Linux VMs.
-  - Set up Docker, Docker Compose, and Kubernetes.
-  - Installed Open5GS, WebUI, and UE simulation tools.  
-
-#### **Milestone 4: Deploy Open5GS Core**  
-- **Tasks Completed:**
-  - Deployed Open5GS core network with an initial network slice.
-  - Configured key network components and validated functionality.
-  - Updated documentation and realigned project goals.  
-
-#### **Milestone 5: Deploy UERANSIM**  
-- **Tasks Completed:**
-  - Deployed and integrated UERANSIM for UE connectivity.
-  - Ensured connectivity between UERANSIM and Open5GS core.  
-
-#### **Milestone 6: Simulate UEs & Expand Network Slices**  
-- **Tasks Completed:**
-  - Registered multiple UEs and tested network slicing.
-  - Configured multiple UPF instances for different slices.
-  - Scaled network slices based on S-NSSAI requirements.  
-
-#### **Milestone 7: Testing and Performance Validation & Documentation**  
-- **Tasks Completed:**
-  - Measured throughput and latency for each slice.
-  - Monitored UE registration and PDU session performance.
-  - Created detailed documentation and final project presentation.  
-
-#### **Milestone 8: Management and Orchestration**  
-- **Tasks Completed:**
-  - Integrated orchestration logic with Docker for automated slice management.
-  - Developed a complete architecture for dynamic slice allocation.  
+| **Milestone** | **Tasks Completed** |
+|--------------|---------------------|
+| **Milestone 1: Project Understanding** | - Setup GitHub repository and navigated project requirements.<br>- Studied deployment templates and network slicing architecture.<br>- Understood 5G slicing concepts and functions. |
+| **Milestone 2: Research** | - Researched 5G core slicing, UPF, and SMF.<br>- Studied network slicing and orchestration principles. |
+| **Milestone 3: Environment Setup** | - Installed and configured Linux VMs.<br>- Set up Docker, Docker Compose, and Kubernetes.<br>- Installed Open5GS, WebUI, and UE simulation tools. |
+| **Milestone 4: Deploy Open5GS Core** | - Deployed Open5GS core network with an initial network slice.<br>- Configured key network components and validated functionality.<br>- Updated documentation and realigned project goals. |
+| **Milestone 5: Deploy UERANSIM** | - Deployed and integrated UERANSIM for UE connectivity.<br>- Ensured connectivity between UERANSIM and Open5GS core. |
+| **Milestone 6: Simulate UEs & Expand Network Slices** | - Registered multiple UEs and tested network slicing.<br>- Configured multiple UPF instances for different slices.<br>- Scaled network slices based on S-NSSAI requirements. |
+| **Milestone 7: Testing and Performance Validation & Documentation** | - Measured throughput and latency for each slice.<br>- Monitored UE registration and PDU session performance.<br>- Created detailed documentation and final project presentation. |
+| **Milestone 8: Management and Orchestration** | - Integrated orchestration logic with Docker for automated slice management.<br>- Developed a complete architecture for dynamic slice allocation. |
  
 ---
 
@@ -446,7 +413,7 @@ The project was structured into key milestones, each contributing to the success
 	 <p align="center">Figure 6.9: Issue with an Milistones</p>
 </p>
 
-### Issues and Resolutions  
+#### Issues and Resolutions  
 
 The following challenges were encountered and addressed during the project:  
 
@@ -579,7 +546,7 @@ A PDU session is required to establish connectivity between the UE (User Equipme
 2025-03-01 16:28:37 [2025-03-01 15:28:37.131] [nas] [debug] PDU Session Establishment Accept received
 2025-03-01 16:28:37 [2025-03-01 15:28:37.134] [nas] [info] PDU Session establishment is successful PSI[1]
 2025-03-01 16:28:38 [2025-03-01 15:28:38.378] [app] [info] Connection setup for PDU session[1] is successful, TUN interface[uesimtun0, 10.45.0.5] is up.
-
+```
 
 ### 5.6. Multiple Slicing
 
@@ -597,44 +564,92 @@ Network slicing allows different types of traffic to be handled using separate l
    docker exec -it <nf-container> sh
 
 ### 5.7. Completion of Network Architecture (iperf3)
-  Installation of IPERF3 and then show the output of the amf and other communicating with iperf3. 
+After completing the whole architecture we made a test using iperf3 which is attached below as well as also persent in the pictures section of github. 
+
+iperf3 at 'slicing-upf_smf_ues-smf-1'.
+
+```logs
+# iperf3 -c test.iperf.org
+Connecting to host test.iperf.org, port 5201
+[  5] local 10.33.33.21 port 55064 connected to 10.33.33.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  2.48 GBytes  21.3 Gbits/sec    2   3.90 MBytes       
+[  5]   1.00-2.00   sec  2.32 GBytes  19.9 Gbits/sec    2   3.90 MBytes       
+[  5]   2.00-3.00   sec  2.90 GBytes  24.9 Gbits/sec    0   3.90 MBytes       
+[  5]   3.00-4.00   sec  3.50 GBytes  30.0 Gbits/sec    1   3.90 MBytes       
+[  5]   4.00-5.00   sec  3.46 GBytes  29.8 Gbits/sec    0   3.90 MBytes       
+[  5]   5.00-6.00   sec  3.55 GBytes  30.5 Gbits/sec    0   3.90 MBytes       
+[  5]   6.00-7.00   sec  3.52 GBytes  30.3 Gbits/sec    0   3.90 MBytes       
+[  5]   7.00-8.00   sec  3.18 GBytes  27.3 Gbits/sec    0   3.90 MBytes       
+[  5]   8.00-9.00   sec  3.86 GBytes  33.2 Gbits/sec    1   3.90 MBytes       
+[  5]   9.00-10.00  sec  3.42 GBytes  29.4 Gbits/sec    0   3.90 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  32.2 GBytes  27.7 Gbits/sec    6             sender
+[  5]   0.00-10.04  sec  32.2 GBytes  27.5 Gbits/sec                  receiver
+iperf Done.
+#
+```
+
+Adding iperf3 in the network:
+```yaml
+iperf:
+    container_name: iperf
+    image: "mlabbe/iperf3:latest"
+    networks:
+      open5gs:
+        aliases:
+          - test.iperf.org
+```
+
   
 
 ### 5.8. Adding Prometheus and Grafana
-  - Install Grafana and configure it to visualize Prometheus data.
+Prometheus and Grafana are powerful tools for monitoring and visualizing network functions in an Open5GS environment. Prometheus collects and stores real-time metrics, while Grafana provides an interactive dashboard for data visualization.
+
+To integrate Prometheus and Grafana, first, install Grafana and configure it to visualize Prometheus data. Once set up, the following PromQL queries can be used to monitor specific aspects of the 5G core network:
 
 'amf sessions'
    ```bash
 amf_session{instance="amf1.open5gs.org:9090", job="amf1"}
 ```
+This query retrieves active session metrics from the Access and Mobility Management Function (AMF) in the Open5GS deployment.
+
 
 'gnb sessions on AMF'
    ```bash
 {__name__="gnb", instance="amf1.open5gs.org:9090", job="amf1"}
 ```
+This provides insights into the number of connected gNBs (5G base stations) handled by the AMF.
+
 
 'AMF Authentication task'
 
    ```bash
 fivegs_amffunction_amf_authreq{job="amf1"}
 ```
+This tracks authentication requests processed by the AMF, which is crucial for ensuring user devices are authenticated in the network.
+
 
 'PCF successful Policies'
 
    ```bash
 fivegs_pcffunction_pa_policysmassosucc
 ```
+This monitors the number of successful policy applications handled by the Policy Control Function (PCF), ensuring proper QoS and traffic management.
 
 'Active UEs in SMF'
    ```bash
 {__name__="ues_active", instance="smf1.open5gs.org:9090", job="smf1"}
 
- ```   
+ ```
+By visualizing these metrics in Grafana, network operators can efficiently monitor 5G core components, analyze session trends, track authentication processes, and ensure policy enforcement for optimal performance.
     
 ### 5.9. Alert Manager
 
-Deploying Alert Manager discuss little bit about alert manager
+Alertmanager is a critical component in the Prometheus ecosystem responsible for handling alerts efficiently. It manages alert notifications by deduplicating, grouping, and routing them to various channels like email, Slack, or webhook endpoints. This ensures that system administrators receive only meaningful alerts rather than being overwhelmed by repetitive notifications. Additionally, Alertmanager allows silencing alerts for specific conditions and supports escalation policies to ensure critical issues are promptly addressed. Deployment involves configuring it alongside Prometheus, defining alerting rules, and specifying notification channels. By integrating Alertmanager with Prometheus, organizations can achieve proactive monitoring and quick issue resolution, enhancing overall system reliability.
 
+Adding to the docker compose:
 ```yaml
 alertmanager:
    container_name: alertmanager
@@ -655,14 +670,12 @@ alertmanager:
       - webhook  
 ```
       
-# WebUI Service Configuration (YAML)
+# 5.10. WebUI Service Configuration (YAML)
+In Open5GS, the WebUI Service is a web-based interface that allows users to monitor and manage various components of the 5G Core Network. The configuration of WebUI is done using a YAML file, where essential parameters such as database connections, authentication settings, and network bindings are defined. Typically, WebUI connects to the Open5GS database (MongoDB) to display subscriber information, session details, and network statistics in real time. The YAML configuration includes settings like the service address (bind), database credentials, and optional security parameters such as TLS encryption. Proper configuration ensures seamless integration with the core network, allowing operators to efficiently oversee and troubleshoot network functions through an intuitive graphical interface.
 
 This section provides an overview of the `webui` service configuration using YAML within a Docker Compose setup. YAML (Yet Another Markup Language) is widely used for configuration files due to its readability and support for complex data structures.
 
----
-
-## YAML Configuration
-
+Webui adding to docker compose:
 ```yaml
  webui:
     container_name: webui
@@ -691,9 +704,9 @@ This section provides an overview of the `webui` service configuration using YAM
       - "0.0.0.0:9999:9999/tcp"
     depends_on:
     - prometheus
+```
 
-
-### **5.10. Network Testing tools installations (iperf3 etc.)**
+### **5.11. Network Testing tools installations (iperf3 etc.)**
 
 For our project, we have installed various network testing tools such as mgen, iperf3, and flowgrind. These tools help in evaluating network performance, generating traffic, and analyzing slicing efficiency. The installation process is simple and quick.
 
@@ -780,12 +793,12 @@ cadvisor:
 
 ```
     
-# **6. Orchestration and Management**
+## 6. Orchestration and Management
 
 Efficient management and orchestrating are essential for **network slicing** in a dynamic manner in Open5GS. The following explains how **monitoring, alerting, and automation** are being managed based on **Prometheus, Grafana, and Docker** in achieving good performance and availability.
 
 
-## **6.1. Summing up whole Network Functions (NFs) in Prometheus**
+### 6.1. Summing up whole Network Functions (NFs) in Prometheus
 Prometheus is used for capturing and holding real-time metrics for Open5GS entities. The inner functions in Open5GS (AMF, SMF, UPF, NRF) are configured to expose CPU usage, active sessions, and network-related information. The metrics are periodically scraped from a configuration file in `prometheus.yaml`. The information is stored in Prometheus for real-time surveillance and analysis. 
 
 Here is our 'Prometheus.yaml' configuration.
@@ -843,7 +856,7 @@ scrape_configs:
    ```
 We have access to all (amf, smf, upf) which are defined in our topology. As well as cadvisor, nrf other important components. Here we have shown the connection with Prometheus in the below screenshot. As we know it's still in the development process so, it doesn't support all functions of open5gs as stated on their webpage. The port:9090 is used by the NFs to send data to the Prometheus. 
 
-## **6.2. Dashboards in Grafana**
+### 6.2. Dashboards in Grafana
 Grafana is used for 'Prometheus' visualizations and real-time monitoring. These are the following dashboards, we have created multiple dashboards to visualize our Prometheus data. Which include data received from (amf, upf, pcf, smf, cadvisor).Here are details of the included dashboards:  
 
    - 'AMF Dashboard': This dashboard includes AM Initial Registration requests, AMF Authentication requests, AMF Active gnodeb's, AMF Actice Sessions.
@@ -879,7 +892,7 @@ Grafana is used for 'Prometheus' visualizations and real-time monitoring. These 
 </p>
 
 
-## **6.3 Database Connectivity, Storage and Processing**
+### 6.3 Database Connectivity, Storage and Processing
 
 Database connectivity is mandatory for network-based information such as subscriber information, network slicing profiles, and performance logs. Secure connectivity is mandatory for smooth fetching and storing for authentication, sessions, and analytics.
 
@@ -915,7 +928,7 @@ As the important role of Database is that:
 	 <p align="center">Figure 6.8: Subcribers Inforamation</p>
 </p>
 
-## **6.4. Creating an Alert Rule**
+### 6.4. Creating an Alert Rule
 To enhance the reliability and scalability of the Open5GS core network, we have implemented an alerting system using Prometheus Alert Rules. This setup ensures active reaction to key events in NF's (upf, smf) to prevent service disruptions and optimize resource allocation.
 
 We have created three alerts from which first are our project requirements. First is UPF Scaling Alert (ScaleUPF) monitors the number of UEs registered to AMF2. If the ran_ue metric exceeds 5 UEs for more than 1 minute, an alert is triggered with a critical severity label, instructing the system to scale the UPF instance accordingly. Similarly, the SMF Scaling Alert (ScaleSMF) follows the same principle but triggers when more than 5 UEs are registered for 3 minutes, ensuring the SMF can handle increased session load.
@@ -959,7 +972,7 @@ Additionally, a Container Availability Alert (ContainerDown) has been configured
  `````
 
 
-## **6.5. Triggering Notifications and Webhook Communication**
+### 6.5. Triggering Notifications and Webhook Communication
 
 Here we need to understand the alert we have created now needs to be forwarded to the alert manager. Where we can collect and manage alerts from multiple Prometheus instances in a single place. Supports multiple receivers like email, Slack, PagerDuty, or webhooks, allowing flexible notification methods. As in our case we are using 'webhook'. Before reaching alert to the alert manager, alert has three modes shown below (Active, Pending, Firing): 
 
@@ -1010,7 +1023,7 @@ receivers:
 As our webhook is accessible at the 'http://webhook:5001/alert' so every request alert comes to the alert manager will be forwarded to the webhook. More details are also discussed in this document according to the requirement. 
 
 
-## **6.6. Deploying Python Scripts in Containers**
+### 6.6. Deploying Python Scripts in Containers
 The provided Python script implements a webhook using Flask to handle scaling alerts for Open5GS core network components, specifically the UPF (User Plane Function) and SMF (Session Management Function). When an alert is fired by Prometheus and forwarded to Alertmanager, it is sent to this webhook as a JSON payload containing alert details.Like shown logs of webhook.
 
 The webhook processes incoming alerts asynchronously using a thread pool executor, ensuring scalability and non-blocking execution. Upon receiving a “ScaleUPF” or “ScaleSMF” alert, it dynamically retrieves the current count of running container instances using a Docker command and triggers an appropriate scaling action via Docker Compose. The scaling command instructs Docker Compose to increase the number of UPF or SMF instances while maintaining their operational state. To enhance stability, a short delay is introduced after scaling, allowing the new instances to initialize properly. By integrating this webhook with Alertmanager, automated service scaling is achieved, ensuring the Open5GS network can dynamically adapt to traffic demands. This automation optimizes resource utilization, prevents congestion, and enhances the reliability of the 5G core network, making it highly responsive to real-time network conditions.
@@ -1143,7 +1156,7 @@ This is the logs of webhook running as a flash application under same docker con
 As the logs shows that new UPF-5 has been created. And running. So, the goal of orchestration or scalability is achieved. But as this is not a good or recommended method of doing orchestration because docker compose only provide manual scaling. And docker compose does'nt provide automatic scaling. But we tried to make it automated. But because involemenet of differenet platform. It's make it complex and non-reliable for major use. It's only good for specific test cases. Well we have also tried docker swarm which is discussed below and also we discussed the limitstions of the docker swarm. 
 
 
-## 6.7 Management and Orchestration Workflow
+### 6.7 Management and Orchestration Workflow
 
 This procedure describes the use of **Prometheus, Grafana, and AlertManager** for monitoring and automation in **Open5GS network slicing**.
 
@@ -1171,7 +1184,7 @@ This arrangement facilitates **automating the management of network slicing** an
 </p>
 
 
-## **6.8. Docker Compose limitations**
+### 6.8. Docker Compose limitations
 In your project we are using Docker Compose, there are several limitations to consider. Docker Compose is designed to run on a single host, limiting its ability to scale across multiple machines, making it less ideal for distributed systems. While we can scale services, 'Docker Compose isn’t as efficient for large-scale deployments' or high availability as Kubernetes or Docker Swarm. It's ideal only for one or two containers creation. The networking model can become complex when managing multiple containers that need to communicate across various networks, and persistent storage for stateful applications can be challenging without careful handling of Docker volumes. Furthermore, Docker Compose doesn’t offer advanced configuration management or fine-grained resource controls, which can be limiting for more complex setups. Centralized logging and service discovery can require third-party tools, and upgrading services may lead to downtime. For larger or production-grade projects, Kubernetes or Docker Swarm would offer more robust solutions.
 
 **limitations**:
@@ -1184,7 +1197,7 @@ In your project we are using Docker Compose, there are several limitations to co
 
 For large-scale deployments, **Kubernetes or docker swarm** is proposed.
 
-## **6.9. Docker Swarm and Disadvantages**
+### 6.9. Docker Swarm and Disadvantages
 We have attempted to use Docker Swarm for orchestration, given its capabilities in multi-container orchestration, scalability, and load balancing for network functions. Docker Swarm would allow us to spread Open5GS components across hosts, balance UE traffic optimally, and perform rolling updates without disrupting services. However, due to the limitations of running Docker Swarm on a single laptop, it has not been feasible to implement. Additionally, the project description also restricts us to using Docker Compose, which, while functional, isn’t the most ideal solution for our needs. Docker Compose lacks the advanced networking features, granularity in resource allocation, and integration options that Docker Swarm or Kubernetes offer, making it less suitable for handling complex, large-scale deployments such as those required for Open5GS. For more advanced network slicing and enhanced orchestration, other solutions need to consider rather than Docker Compose. 
 
 
@@ -1194,22 +1207,22 @@ We have attempted to use Docker Swarm for orchestration, given its capabilities 
 </p>
 
 
-Docker Swarm supports **multi-container orchestration** through:
-- **Scalability**: It spreads **network functions** across hosts.
-- **Load Balancing**: It balances **UE traffic** optimally.
-- **Rolling Updates**: Upgrade Open5GS components **non-disruptively**.
+Docker Swarm supports multi-container orchestration through:
+- **Scalability**: It spreads network functions across hosts.
+- **Load Balancing**: It balances UE traffic optimally.
+- **Rolling Updates**: Upgrade Open5GS components non-disruptively.
 
 However, it is restricted.
 | **Limitation** | **Influence on Open5GS** |
 |--------------|-----------------|
-| **Less Feature-Rich than Kubernetes** | Lacks **rich networking** features. |
-| **No granularity level control** | Cannot reserve **each individual CPU/memory for each slice**.
+| **Less Feature-Rich than Kubernetes** | Lacks rich networking features. |
+| **No granularity level control** | Cannot reserve each individual CPU/memory for each slice**.
 | **Limited Integrations** | Fewer features for logs and monitoring. |
 
-For advanced network slicing, **Kubernetes** is a superior option.
+For advanced network slicing, Kubernetes is a superior option.
 
 
-## **6.9. Restart_policy and Other Policies**
+### 6.9. Restart_policy and Other Policies
 Docker Compose offers several options to ensure the reliability and stability of containers, particularly through restart policies and health checks. These policies help ensure that your services stay up and running, even in the event of failure or unexpected shutdowns. Here’s a breakdown of these options:
 
 Docker’s restart policies control whether a container should automatically restart when it exits or fails. These policies are especially useful for ensuring the availability of critical services like Open5GS components. The key restart policies include:
@@ -1245,7 +1258,7 @@ In this configuration, the health check ensures that the UPF metrics endpoint (h
 This Portion describes the running network details, our results how we have achieved the goals, and the test we have conducted to evaluate ourselves. 
 
 
-### **Open5gs Networks and Containers. 
+### Open5gs Networks and Containers. 
 
 As 'docker network ls' shows the current available networks and as we are using open5gs as a network under the network ID range '10.33.33.0/24'. and br-ogs specifies a custom name for the bridge network that Docker will create and use for the open5gs network. All container get a dynamic IP in the range of '10.33.33.0'. Which as a example in our case shown in below tables. 
 
@@ -1361,7 +1374,7 @@ As shown below the dynamic IP assigned by the bridge network. Remember these are
 | sst-4, sd-0x000003  | ue12                      |                  | 10.48.0.4                  |
 
 
-## 7.1. Iperf3 testing of UE's
+### 7.1. Iperf3 testing of UE's
 To validate the functionality of network slicing, iPerf3 was used to conduct performance tests between the User Equipment (UE) and the Open5GS network. An iPerf3 server was created using a Docker container, which allowed for controlled and consistent testing of the network’s performance. Each UE was tested individually, sending traffic to the iPerf3 server to assess the throughput, latency, and packet loss under different conditions.
 
 ```bash
@@ -1379,19 +1392,19 @@ The tests helped ensure that the network slicing configurations were properly is
 Here are the testing results of UE's Iperf3. 
 
 
-## 7.2. Multiple UEs Registration and PDU Session Establishment
+### 7.2. Multiple UEs Registration and PDU Session Establishment
 - Several UEs are attached to the test system capacity.
 - Ensures PDU sessions are correctly mapped to network slices.
 
-## 7.3. Network Slicing Verification
+### 7.3. Network Slicing Verification
 - Directs traffic to the corresponding network slice depending on SST and SD values.
 - Ensures appropriate implementation of QoS (Quality of Service) policies.
 
-## 7.4. Packetrusher
+### 7.4. Packetrusher
 - A packet generation tool is utilized for stress-testing the network.
 - Assists in testing the 5G Core's ability to handle high volumes of packets.
 
-## 7.5. Performance Testing (Throughput & Latency)
+### 7.5. Performance Testing (Throughput & Latency)
 
 - Measures throughput (data transfer rate) and latency (delay) under varying loads.
 - Facilitates evaluation of the network's performance under different conditions.
@@ -1401,7 +1414,7 @@ Here are the testing results of UE's Iperf3.
 	 <p align="center">Figure 7.4: Throughput Monitoring</p>
 </p>
 
-## 7.6. Failure Recovery Test - Simulates failures of critical components (e.g., AMF, UPF). 
+### 7.6. Failure Recovery Test - Simulates failures of critical components (e.g., AMF, UPF). 
 - Monitors how the system automatically recovers and restores services.
 
 These tests validate that Open5GS runs **reliably and correctly** within an environment of network slicing.
@@ -1415,7 +1428,7 @@ These tests validate that Open5GS runs **reliably and correctly** within an envi
 - Monitor performance under different traffic loads.
 
 This documentation will be available in Markdown format in the GitHub repository, ensuring proper formatting, readability, and consistency.
-##  Additional Deployment Steps
+###  Additional Deployment Steps
 - Deploy multiple gNodeBs for multiple UEs.
 - Ensure successful connectivity between UERANSIM and Open5GS core.
 - Register multiple UEs and establish PDU sessions.
@@ -1448,151 +1461,3 @@ Overall, this project warrants the application of **containerized 5G core networ
 - Open5GS Documentation: [https://open5gs.org/](https://open5gs.org/)
 - UERANSIM Documentation: [https://github.com/aligungr/UERANSIM](https://github.com/aligungr/UERANSIM)
 - Docker Documentation: [https://docs.docker.com/](https://docs.docker.com/)
-
-
-
-
-
-# Welcome to StackEdit!
-
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
-
-
-# Files
-
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
-
-## Create files and folders
-
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
-
-## Switch to another file
-
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
-## Rename a file
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
-## Delete a file
-
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-## Export a file
-
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
-
-
-# Synchronization
-
-Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
-
-There are two types of synchronization and they can complement each other:
-
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-	> To start syncing your workspace, just sign in with Google in the menu.
-
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
-
-## Open a file
-
-You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
-
-## Save a file
-
-You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
-
-## Synchronize a file
-
-Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
-
-If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-
-> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-
-## Manage file synchronization
-
-Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
-
-
-# Publication
-
-Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
-
-> Before starting to publish, you must link an account in the **Publish** sub-menu.
-
-## Publish a File
-
-You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-
-- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-
-## Update a publication
-
-After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-
-> **Note:** The **Publish now** button is disabled if your file has not been published yet.
-
-## Manage file publication
-
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
-
-
-# Markdown extensions
-
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
-
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-
-
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
-
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
-
-
-## UML diagrams
-
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
-
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
-```
-
-And this will produce a flow chart:
-
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
