@@ -24,12 +24,12 @@
 
 
 ## Contents
-*   [Introduction](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/main/README.md#1-introduction)
-*   [Literature Review](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/edit/main/README.md#2-literature-review)
-    *   [Overview of Open5GS and 5G Core Networks](Overview_of_Open5GS_and_5G_Core_Networks)
-    *   [Key Components of Open5GS](Key_Components_of_Open5GS)
-        *   [AMF (Access and Mobility Management Function)](AMF_(Access_and_Mobility_Management_Function))
-        *   [SMF (Session Management Function)](SMF_(Session_Management_Function))
+*   [Introduction](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#1-introduction)
+*   [Literature Review](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers#2-literature-review)
+    *   [Overview of Open5GS and 5G Core Networks](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#21-overview-of-open5gs-and-5g-core-networks)
+    *   [Key Components of Open5GS](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#22-key-components-of-open5gs)
+        *   [AMF (Access and Mobility Management Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#221-amf-access--mobility-management-function)
+        *   [SMF (Session Management Function)](https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers?tab=readme-ov-file#222-smf-session-management-function)
         *   [UPF (User Plane Function)](UPF_(User_Plane_Function))
         *   [NRF (Network Repository Function)](NRF_(Network_Repository_Function))
         *   [PCF (Policy Control Function)](PCF_(Policy_Control_Function))
