@@ -24,8 +24,8 @@
 
 
 ## Contents
-*   [Introduction](Introduction)
-*   [Literature Review](Literature_Review)
+*   [Introduction](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/main/README.md#1-introduction)
+*   [Literature Review](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/edit/main/README.md#2-literature-review)
     *   [Overview of Open5GS and 5G Core Networks](Overview_of_Open5GS_and_5G_Core_Networks)
     *   [Key Components of Open5GS](Key_Components_of_Open5GS)
         *   [AMF (Access and Mobility Management Function)](AMF_(Access_and_Mobility_Management_Function))
