@@ -19,7 +19,7 @@
 <a id="toc"></a>
 
 1. [Introduction](#Introduction)
-2. [Literature Review](#Literature_Review)
+2. [Literature Review](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs?tab=readme-ov-file#222-smf-session-management-function)
    2.1 [Overview of Open5GS and 5G Core Networks](##Overview_of_Open5GS_and_5G_Core_Networks)
    2.2 [Key Components of Open5GS](##Key_Components_of_Open5GS)
     2.2.1 [AMF (Access and Mobility Management Function)](###AMF_(Access_and_Mobility_Management_Function))
