@@ -1297,7 +1297,7 @@ alertmanager:
       - webhook  
 ```
       
-# 5.10. WebUI Service Configuration (YAML)
+### 5.10. WebUI Service Configuration (YAML)
 In Open5GS, the WebUI Service is a web-based interface that allows users to monitor and manage various components of the 5G Core Network. The configuration of WebUI is done using a YAML file, where essential parameters such as database connections, authentication settings, and network bindings are defined. Typically, WebUI connects to the Open5GS database (MongoDB) to display subscriber information, session details, and network statistics in real time. The YAML configuration includes settings like the service address (bind), database credentials, and optional security parameters such as TLS encryption. Proper configuration ensures seamless integration with the core network, allowing operators to efficiently oversee and troubleshoot network functions through an intuitive graphical interface.
 
 This section provides an overview of the `webui` service configuration using YAML within a Docker Compose setup. YAML (Yet Another Markup Language) is widely used for configuration files due to its readability and support for complex data structures.
@@ -1332,6 +1332,15 @@ Webui adding to docker compose:
     depends_on:
     - prometheus
 ```
+
+
+   <p align="center">
+<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Zaka_Screenshoots/WebUI/Screenshot%202025-03-01%20at%201.24.31%E2%80%AFPM.png" width="1050"/>
+	 <p align="center">Figure 5.3: Multiple NFs </p>
+</p>
+
+
+
 
 ### **5.11. Network Testing tools installations (iperf3 etc.)**
 
