@@ -1,5 +1,5 @@
 
-## Implementing of Slicing-UPF/SMF-UEs in 5G Core Network Deployment
+                                     Implementing of Slicing-UPF/SMF-UEs in 5G Core Network Deployment
 
 <p align="center">
 <img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/resources/images/FRA-UAS_Logo_rgb.jpg" width="450"/>
@@ -15,8 +15,8 @@
     <h5 align="center">Muhammad Haris (1440274) </h5>
     <h5 align="center">Yatish Sharma (1457597) </h5>
 </p>
-
 <a id="toc"></a>
+
 
 1. [Introduction](#Introduction)
 2. [Literature Review](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs?tab=readme-ov-file#2-literature-review)
