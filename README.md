@@ -763,7 +763,7 @@ A Single Network Slice Selection Assistance Information (S-NSSAI) is used to cha
 **Slice Differentiator (SD)** → Separates additional slices in a provided SST.
 The table below outlines average SST values and their applications:
 
-| **SST (Slice Service Type)** | **Service Category** | **Use Cases** |  
+| **SST** | **Service Category** | **Use Cases** |  
 |-----------------------------|---------------------|--------------|  
 | **1** | Enhanced Mobile Broadband (eMBB) | High-speed internet, video streaming, AR/VR |  
 | **2** | Massive Machine-Type Communication (mMTC) | IoT, smart cities, sensor networks |  
@@ -773,6 +773,8 @@ The table below outlines average SST values and their applications:
 In order to implement network slicing in Open5GS, the AMF, SMF, and UPF components must be configured to support multiple slices. Each slice is assigned a specific S-NSSAI in the configuration files (amf.yaml, smf.yaml) such that UEs connect to their own slice based on their subscription and requirements. Additionally, test tools like UERANSIM help validate if UEs are correctly connecting to the intended network slice.
 
 With the help of network slicing, Open5GS allows operators to create flexible, secure, and scalable 5G networks for different use cases. This optimizes resource utilization, quality of service (QoS), and performance, leading to more effective and versatile 5G networks for future growth.
+
+
 ### 2.4 Docker and Containerization for Open5GS
 
 Containerization is a lightweight virtualization method whereby applications are executed within their own segregated environments in order to provide consistency across several deployment platforms. Docker is the most widely used containerization technology that facilitates seamless packaging and execution of applications with all dependencies required. Containerizing Open5GS 5GC components renders the deployment modular and scalable in nature.
