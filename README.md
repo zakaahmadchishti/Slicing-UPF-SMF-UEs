@@ -1,6 +1,6 @@
-# Implementing of Slicing-UPF/SMF-UEs in 5G Core Network Deployment
+                                Implementing of Slicing-UPF/SMF-UEs in 5G Core Network Deployment
 
-<!-- PROJECT LOGO -->
+
 <p align="center">
 <img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/resources/images/FRA-UAS_Logo_rgb.jpg" width="450"/>
 </p>
