@@ -22,60 +22,68 @@
 ## Table of Contents:
 1. [Introduction](Introduction)
 2. [Literature Review](Literature_Review)
-   - 2.1 [Overview of Open5GS and 5G Core Networks](Overview_of_Open5GS_and_5G_Core_Networks)
-   - 2.2 [Key Components of Open5GS](Key_Components_of_Open5GS)
-      - 2.2.1 AMF (Access and Mobility Management Function)
-      - 2.2.2 SMF (Session Management Function)
-      - 2.2.3 UPF (User Plane Function)
-      - 2.2.4 NRF (Network Repository Function)
-      - 2.2.5 PCF (Policy Control Function)
-   - 2.3 Why Network Slicing?
-   - 2.4 Role of NFs in Slicing
-3. Architecture Overview
-   - 3.1. Topology Design and Slicing Based on Application
-   - 3.2. Design Challenges and Limitations
-4. Requirements and Planning
-   - 4.1. Hardware and Development Requirements
-   - 4.2. Milestones and Issues
-5. Development and Deployment 
-   - 5.1. Setting Up the Docker Environment
-   - 5.2. Repo Clone and Test Deployments 
-   - 5.3. Creating Multiple NFs
-   - 5.4. PDU Session Creation
-   - 5.5. Multiple Slicing
-   - 5.6. Completion of Network Architecture
-   - 5.7. Adding Prometheus and Grafana
-   - 5.8. Alert Manager
-   - 5.9. Webhook
-   - 5.10. Communication b/w Dockers
-   - 5.11. Python Script and Flask Application
-   - 5.12. Deploying Webhook Package under Project Docker
-   - 5.13. cAdvisor
-6. Management and Orchestration
-   - 6.1. Adding all NFs in Prometheus
-   - 6.2. Dashboards Grafana
-   - 6.3  Database Connectivity, Storage and Processing
-   - 6.4. Creating an Alert
-   - 6.5. Triggering Alert and Webhook Communication
-   - 6.6. Python Script Container Deployment
-   - 6.7. Limitation of Docker Compose
-   - 6.8. Docker Swarm and Limitations
-   - 6.9. Restart Policy and Other Policies
-   - 6.10 Management and Orchestration Workflow
-7. Testing Script
-   - 7.1. Iperf3 testing of UE's
-   - 7.2. Registering Multiple UEs and Establishing PDU Sessions
-   - 7.3. Network Slicing Verification
-   - 7.4  Packetrusher
-   - 7.5. Performance Testing (Throughput & Latency)
-   - 7.6. Failure Recovery Test
-8. Conclusion
-9. References
+   2.1 [Overview of Open5GS and 5G Core Networks](Overview_of_Open5GS_and_5G_Core_Networks)
+   2.2 [Key Components of Open5GS](Key_Components_of_Open5GS)
+    2.2.1 [AMF (Access and Mobility Management_Function)](AMF_(Access_and_Mobility_Management_Function))
+    2.2.2 [SMF (Session Management Function)](SMF_(Session_Management_Function))
+    2.2.3 [UPF (User Plane Function)](UPF_(User_Plane_Function))
+    2.2.4 [NRF (Network_Repository_Function)](NRF_(Network_Repository_Function))
+    2.2.5 [PCF (Policy Control Function)](PCF_(Policy_Control_Function))
+   2.3 [Why Network Slicing?](Why Network Slicing?)
+   2.4 [Role of NFs in Slicing](Why_Network_Slicing?)
+   
+4. Architecture Overview
+   3.1 [Topology Design and Slicing Based on Application](Topology_Design_and_Slicing)
+   3.2 [Design Challenges and Limitations](Design_Challenges_and_Limitations)
+
+5. Requirements and Planning
+   4.1 [Hardware and Development Requirements](Hardware_and_Development_Requirements)
+   4.2 [Milestones and Issues](Milestones_and_Issues)
+
+6. Development and Deployment
+   5.1 [Setting Up the Docker Environment](Setting_Up_Docker_Environment)
+   5.2 [Repo Clone and Test Deployments](Repo_Clone_and_Test_Deployments)
+   5.3 [Creating Multiple NFs](Creating_Multiple_NFs)
+   5.4 [PDU Session Creation](PDU_Session_Creation)
+   5.5 [Multiple Slicing](Multiple_Slicing)
+   5.6 [Completion of Network Architecture](Completion_of_Network_Architecture)
+   5.7 [Adding Prometheus and Grafana](Adding_Prometheus_and_Grafana)
+   5.8 [Alert Manager](Alert_Manager)
+   5.9 [Webhook](Webhook)
+   5.10 [Communication b/w Dockers](Communication_between_Dockers)
+   5.11 [Python Script and Flask Application](Python_Script_and_Flask_Application)
+   5.12 [Deploying Webhook Package under Project Docker](Deploying_Webhook_Package)
+   5.13 [cAdvisor](cAdvisor)
+
+7. Management and Orchestration
+   6.1 [Adding all NFs in Prometheus](Adding_NFs_in_Prometheus)
+   6.2 [Dashboards in Grafana](Dashboards_in_Grafana)
+   6.3 [Database Connectivity, Storage, and Processing](Database_Connectivity_Storage_Processing)
+   6.4 [Creating an Alert](Creating_an_Alert)
+   6.5 [Triggering Alert and Webhook Communication](Triggering_Alert_and_Webhook_Communication)
+   6.6 [Python Script Container Deployment](Python_Script_Container_Deployment)
+   6.7 [Limitation of Docker Compose](Limitation_of_Docker_Compose)
+   6.8 [Docker Swarm and Limitations](Docker_Swarm_and_Limitations)
+   6.9 [Restart Policy and Other Policies](Restart_Policy_and_Other_Policies)
+   6.10 [Management and Orchestration Workflow](Management_and_Orchestration_Workflow)
+
+8. Testing Script
+   7.1 [iperf3 Testing of UEs](iperf3_Testing_of_UEs)
+   7.2 [Registering Multiple UEs and Establishing PDU Sessions](Registering_Multiple_UEs_and_Establishing_PDU_Sessions)
+   7.3 [Network Slicing Verification](Network_Slicing_Verification)
+   7.4 [Packetrusher](Packetrusher)
+   7.5 [Performance Testing (Throughput & Latency)](Performance_Testing_Throughput_Latency)
+   7.6 [Failure Recovery Test](Failure_Recovery_Test)
+
+9. [Conclusion](Conclusion)
+10. [References](References)
+
 
 ## 1. Introduction
 This document is a guide on designing, initializing, and verifying a 5G network slice scenario with Open5GS, UERANSIM, and Docker. The overall goal in this project is network slicing, which supports multiple virtual networks on a common 5G infrastructure. The goal is realized with seamless UE (User Equipment) connectivity with Open5GS core network as well as monitoring, automation, scaling, and resiliency.
 
 The document is about 5G network configuration and integration with critical 5G network elements, describing their functions in 5G slicing architecture. The paper also encompasses stepwise deployment instructions, methods of performance evaluation, and methods of optimization to achieve effective allocation of resources, reduced-latency communications, and high reliability. Using Docker as a means of containerized deployment and simulating the interactions with a UE via UERANSIM, this project is intended to develop a scalable and dynamic 5G slicing platform optimized towards real-world deployments.
+
 
 ## 2. Literature Review
 
