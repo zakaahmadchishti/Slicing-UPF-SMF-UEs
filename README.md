@@ -113,6 +113,122 @@ The **AMF** is responsible for user equipment (UE) accessibility and mobility in
 
 In **Open5GS**, AMF is interacting with other core network entities to offer these services to support seamless connection and handovers in UE.
 
+```yaml
+global:
+amf:
+  sbi:
+    server:
+      - address: amf1.open5gs.org
+        port: 80
+    client:
+      nrf:
+        - uri: http://nrf.open5gs.org:80
+  ngap:
+    server:
+      - address: amf1.open5gs.org
+  metrics:
+    server:
+      - address: amf1.open5gs.org
+        port: 9090
+  guami:
+    - plmn_id:
+        mcc: 262
+        mnc: 01
+      amf_id:
+        region: 2
+        set: 1
+  tai:
+    - plmn_id:
+        mcc: 262
+        mnc: 01
+      tac: 1
+  plmn_support:
+    - plmn_id:
+        mcc: 262
+        mnc: 01
+      s_nssai:
+        - sst: 1
+          sd: 000001
+        - sst: 1
+          sd: 000002
+        - sst: 1
+          sd: 000003
+        - sst: 2
+          sd: 000001
+        - sst: 2
+          sd: 000002
+        - sst: 2
+          sd: 000003  
+  security:
+      integrity_order : [ NIA2, NIA1, NIA0 ]
+      ciphering_order : [ NEA0, NEA1, NEA2 ]
+  network_name:
+    full: Open5GS
+  amf_name: open5gs-amf0
+  time:
+    t3512:
+      value: 540
+```
+
+The logs of 'AMF-1':
+
+```yaml
+2025-03-01 23:55:43 Open5GS daemon v2.7.2
+2025-03-01 23:55:43 
+2025-03-01 23:55:43 03/01 22:55:43.103: [app] INFO: Configuration: '/etc/open5gs/custom/amf1.yaml' (../lib/app/ogs-init.c:133)
+2025-03-01 23:55:43 03/01 22:55:43.103: [app] INFO: File Logging: '/var/log/open5gs/amf1.log' (../lib/app/ogs-init.c:136)
+2025-03-01 23:55:43 03/01 22:55:43.160: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:80] (../lib/sbi/context.c:426)
+2025-03-01 23:55:43 03/01 22:55:43.163: [metrics] INFO: metrics_server() [http://amf1.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+2025-03-01 23:55:43 03/01 22:55:43.171: [sbi] INFO: NF Service [namf-comm] (../lib/sbi/context.c:1829)
+2025-03-01 23:55:43 03/01 22:55:43.209: [sbi] INFO: nghttp2_server() [http://amf1.open5gs.org]:80 (../lib/sbi/nghttp2-server.c:419)
+2025-03-01 23:55:43 03/01 22:55:43.214: [amf] INFO: ngap_server() [10.33.33.14]:38412 (../src/amf/ngap-sctp.c:61)
+2025-03-01 23:55:43 03/01 22:55:43.215: [sctp] INFO: AMF initialize...done (../src/amf/app.c:33)
+2025-03-01 23:55:43 03/01 22:55:43.262: [sbi] INFO: [4de7bed8-f6f0-41ef-9078-edc506179f8a] NF registered [Heartbeat:10s] (../lib/sbi/nf-sm.c:208)
+2025-03-01 23:55:43 03/01 22:55:43.300: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.301: [sbi] INFO: [4dfad860-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.267149+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.324: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.325: [sbi] INFO: [4dfb7ca2-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.272032+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.350: [sbi] INFO: [4debeb0c-f6f0-41ef-8660-edfff5327ec5] (NRF-notify) NF registered (../lib/sbi/nnrf-handler.c:1133)
+2025-03-01 23:55:43 03/01 22:55:43.353: [sbi] INFO: [4debeb0c-f6f0-41ef-8660-edfff5327ec5] (NRF-notify) NF Profile updated [type:SMF] (../lib/sbi/nnrf-handler.c:1147)
+2025-03-01 23:55:43 03/01 22:55:43.357: [sbi] INFO: NF EndPoint(fqdn) setup [smf2.open5gs.org:0] (../lib/sbi/context.c:2195)
+2025-03-01 23:55:43 03/01 22:55:43.358: [sbi] INFO: NF EndPoint(fqdn) setup [smf2.open5gs.org:0] (../lib/sbi/context.c:1934)
+2025-03-01 23:55:43 03/01 22:55:43.358: [sbi] INFO: [4df30c0c-f6f0-41ef-9ccd-ef68d42c2a98] (NRF-notify) NF registered (../lib/sbi/nnrf-handler.c:1133)
+2025-03-01 23:55:43 03/01 22:55:43.360: [sbi] INFO: [4df30c0c-f6f0-41ef-9ccd-ef68d42c2a98] (NRF-notify) NF Profile updated [type:SMF] (../lib/sbi/nnrf-handler.c:1147)
+2025-03-01 23:55:43 03/01 22:55:43.360: [sbi] INFO: NF EndPoint(fqdn) setup [smf4.open5gs.org:0] (../lib/sbi/context.c:2195)
+2025-03-01 23:55:43 03/01 22:55:43.362: [sbi] INFO: NF EndPoint(fqdn) setup [smf4.open5gs.org:0] (../lib/sbi/context.c:1934)
+2025-03-01 23:55:43 03/01 22:55:43.365: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.366: [sbi] INFO: [4dfc8926-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.275983+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.382: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.385: [sbi] INFO: [4dfcb806-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.277264+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.398: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.399: [sbi] INFO: [4dfd351a-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.283237+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.399: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.399: [sbi] INFO: [4dfe0fc6-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.286263+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.400: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.400: [sbi] INFO: [4dfe43d8-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.287990+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.636: [sbi] INFO: [4e1ca36e-f6f0-41ef-8559-41664d75c6ed] (NRF-notify) NF registered (../lib/sbi/nnrf-handler.c:1133)
+2025-03-01 23:55:43 03/01 22:55:43.637: [sbi] INFO: [4e1ca36e-f6f0-41ef-8559-41664d75c6ed] (NRF-notify) NF Profile updated [type:SMF] (../lib/sbi/nnrf-handler.c:1147)
+2025-03-01 23:55:43 03/01 22:55:43.639: [sbi] INFO: NF EndPoint(fqdn) setup [smf1.open5gs.org:0] (../lib/sbi/context.c:2195)
+2025-03-01 23:55:43 03/01 22:55:43.654: [sbi] INFO: NF EndPoint(fqdn) setup [smf1.open5gs.org:0] (../lib/sbi/context.c:1934)
+2025-03-01 23:55:44 03/01 22:55:44.023: [amf] INFO: gNB-N2 accepted[10.33.33.25]:49551 in ng-path module (../src/amf/ngap-sctp.c:113)
+2025-03-01 23:55:44 03/01 22:55:44.031: [amf] INFO: gNB-N2 accepted[10.33.33.25] in master_sm module (../src/amf/amf-sm.c:796)
+2025-03-01 23:55:44 03/01 22:55:44.043: [amf] INFO: [Added] Number of gNBs is now 1 (../src/amf/context.c:1238)
+2025-03-01 23:55:44 03/01 22:55:44.050: [amf] INFO: gNB-N2[10.33.33.25] max_num_of_ostreams : 10 (../src/amf/amf-sm.c:842)
+2025-03-01 23:55:44 03/01 22:55:44.144: [amf] INFO: gNB-N2 accepted[10.33.33.24]:35614 in ng-path module (../src/amf/ngap-sctp.c:113)
+2025-03-01 23:55:44 03/01 22:55:44.158: [amf] INFO: gNB-N2 accepted[10.33.33.24] in master_sm module (../src/amf/amf-sm.c:796)
+2025-03-01 23:55:44 03/01 22:55:44.163: [amf] INFO: [Added] Number of gNBs is now 2 (../src/amf/context.c:1238)
+2025-03-01 23:55:44 03/01 22:55:44.170: [amf] INFO: gNB-N2[10.33.33.24] max_num_of_ostreams : 10 (../src/amf/amf-sm.c:842)
+2025-03-01 23:55:44 03/01 22:55:44.197: [amf] INFO: gNB-N2 accepted[10.33.33.23]:54909 in ng-path module (../src/amf/ngap-sctp.c:113)
+2025-03-01 23:55:44 03/01 22:55:44.198: [amf] INFO: gNB-N2 accepted[10.33.33.23] in master_sm module (../src/amf/amf-sm.c:796)
+2025-03-01 23:55:44 03/01 22:55:44.200: [amf] INFO: [Added] Number of gNBs is now 3 (../src/amf/context.c:1238)
+2025-03-01 23:55:44 03/01 22:55:44.201: [amf] INFO: gNB-N2[10.33.33.23] max_num_of_ostreams : 10 (../src/amf/amf-sm.c:842)
+2025-03-01 23:55:44 03/01 22:55:44.589: [amf] INFO: gNB-N2 accepted[10.33.33.26]:38412 in ng-path module (../src/amf/ngap-sctp.c:113)
+2025-03-01 23:55:44 03/01 22:55:44.605: [amf] INFO: gNB-N2 accepted[10.33.33.26] in master_sm module (../src/amf/amf-sm.c:796)
+2025-03-01 23:55:44 03/01 22:55:44.617: [amf] INFO: [Added] Number of gNBs is now 4 (../src/amf/context.c:1238)
+2025-03-01 23:55:44 03/01 22:55:44.617: [amf] INFO: gNB-N2[10.33.33.26] max_num_of_ostreams : 2 (../src/amf/amf-sm.c:842)
+```
+As we have multiple NF's so the logs files are present in our project files.
+
 #### 2.2.2 SMF (Session Management Function)
 The **SMF** is required to manage session-related contexts with the **User Plane Function (UPF)**
 
@@ -121,6 +237,117 @@ The **SMF** is required to manage session-related contexts with the **User Plane
 - **Policy Enforcer** → Enforces **QoS policies** and applies rules according to policy in the network.
 
 In **Open5GS**, UPF is used in conjunction with SMF to realize efficient handling of session data and policy enforcement.
+
+
+Yaml file of 'smf-1':
+```yaml
+global:
+
+smf:
+  sbi:
+    server:
+      - address: smf1.open5gs.org
+        port: 80
+    client:
+      nrf:
+        - uri: http://nrf.open5gs.org:80
+      pcf:                           
+        - uri: http://pcf.open5gs.org:80  
+  pfcp:
+    server:
+      - address: smf1.open5gs.org
+    client:
+      upf:
+        - address: upf1.open5gs.org
+          dnn: internet
+  gtpu:
+    server:
+      - address: smf1.open5gs.org
+  metrics:
+    server:
+      - address: smf1.open5gs.org
+        port: 9090
+  
+  session:
+    - subnet: 10.45.0.0/16         
+      gateway: 10.45.0.1           
+      dnn: internet
+      ambr:
+        downlink:
+          value: 200  # 200 Mbps max per DNN
+          unit: 2
+        uplink:
+          value: 50
+          unit: 2               
+      
+  dns:
+    - 8.8.8.8
+    - 8.8.4.4
+  mtu: 1400
+  info:
+    - s_nssai:
+      - sst: 1
+        sd: 000001
+        dnn:
+          - internet
+      - sst: 1
+        sd: 000002
+        dnn:
+          - internet
+      - sst: 1
+        sd: 000003  
+        dnn:
+          - internet
+       
+      tai:
+        - plmn_id:
+            mcc: 262
+            mnc: 01
+          tac: 1
+```
+
+Here is the output logs of 'smf-1':
+
+
+```logs
+2025-03-01 23:55:43 Open5GS daemon v2.7.2
+2025-03-01 23:55:43 
+2025-03-01 23:55:43 03/01 22:55:43.328: [app] INFO: Configuration: '/etc/open5gs/custom/smf.yaml' (../lib/app/ogs-init.c:133)
+2025-03-01 23:55:43 03/01 22:55:43.331: [app] INFO: File Logging: '/var/log/open5gs/smf1.log' (../lib/app/ogs-init.c:136)
+2025-03-01 23:55:43 03/01 22:55:43.521: [pfcp] WARNING: unknown key `ambr` (../lib/pfcp/context.c:827)
+2025-03-01 23:55:43 03/01 22:55:43.537: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:80] (../lib/sbi/context.c:426)
+2025-03-01 23:55:43 03/01 22:55:43.544: [metrics] INFO: metrics_server() [http://smf1.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+2025-03-01 23:55:43 03/01 22:55:43.561: [smf] WARNING: No diameter configuration (../src/smf/fd-path.c:30)
+2025-03-01 23:55:43 03/01 22:55:43.563: [smf] WARNING: No GTP-C configuration (../src/smf/gtp-path.c:256)
+2025-03-01 23:55:43 03/01 22:55:43.565: [gtp] INFO: gtp_server() [10.33.33.21]:2152 (../lib/gtp/path.c:30)
+2025-03-01 23:55:43 03/01 22:55:43.568: [pfcp] INFO: pfcp_server() [10.33.33.21]:8805 (../lib/pfcp/path.c:30)
+2025-03-01 23:55:43 03/01 22:55:43.571: [pfcp] INFO: ogs_pfcp_connect() [10.33.33.6]:8805 (../lib/pfcp/path.c:61)
+2025-03-01 23:55:43 03/01 22:55:43.573: [sbi] INFO: NF Service [nsmf-pdusession] (../lib/sbi/context.c:1829)
+2025-03-01 23:55:43 03/01 22:55:43.621: [sbi] INFO: nghttp2_server() [http://smf1.open5gs.org]:80 (../lib/sbi/nghttp2-server.c:419)
+2025-03-01 23:55:43 03/01 22:55:43.625: [app] INFO: SMF initialize...done (../src/smf/app.c:31)
+2025-03-01 23:55:43 03/01 22:55:43.625: [smf] INFO: PFCP associated [10.33.33.6]:8805 (../src/smf/pfcp-sm.c:203)
+2025-03-01 23:55:43 03/01 22:55:43.634: [sbi] INFO: [4e1ca36e-f6f0-41ef-8559-41664d75c6ed] NF registered [Heartbeat:10s] (../lib/sbi/nf-sm.c:208)
+2025-03-01 23:55:43 03/01 22:55:43.658: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.666: [sbi] INFO: [4e340b58-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.640128+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.670: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.672: [sbi] INFO: [4e35dd84-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.651335+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.672: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.673: [sbi] INFO: [4e35ed1a-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.652169+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.673: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.675: [sbi] INFO: [4e36101a-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.652810+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:43 03/01 22:55:43.677: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:43 03/01 22:55:43.678: [sbi] INFO: [4e36bde4-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:43.657656+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:49 03/01 22:55:49.129: [sbi] INFO: [514c2000-f6f0-41ef-af69-474c32649520] (NRF-notify) NF registered (../lib/sbi/nnrf-handler.c:1133)
+2025-03-01 23:55:49 03/01 22:55:49.133: [sbi] INFO: [514c2000-f6f0-41ef-af69-474c32649520] (NRF-notify) NF Profile updated [type:PCF] (../lib/sbi/nnrf-handler.c:1147)
+2025-03-01 23:55:49 03/01 22:55:49.134: [sbi] INFO: NF EndPoint(fqdn) setup [pcf.open5gs.org:0] (../lib/sbi/context.c:2195)
+2025-03-01 23:55:49 03/01 22:55:49.134: [sbi] INFO: NF EndPoint(fqdn) setup [pcf.open5gs.org:0] (../lib/sbi/context.c:1934)
+2025-03-01 23:56:06 03/01 22:56:06.651: [smf] INFO: [Added] Number of SMF-UEs is now 1 (../src/smf/context.c:1029)
+2025-03-01 23:56:06 03/01 22:56:06.651: [smf] INFO: [Added] Number of SMF-Sessions is now 1 (../src/smf/context.c:3113)
+2025-03-01 23:56:06 03/01 22:56:06.652: [smf] INFO: NF EndPoint(fqdn) setup [amf1.open5gs.org:0] (../src/smf/nsmf-handler.c:269)
+2025-03-01 23:56:06 03/01 22:56:06.653: [sbi] WARNING: Try to discover [nudm-sdm] (../lib/sbi/path.c:548)
+```
+As we have multiple log files present in our project files.
+
 
 #### 2.2.3 UPF (User Plane Function)
 The **UPF** is used as the data plane to handle **user data traffic** between the external data networks and the UE. Core responsibilities:
@@ -132,6 +359,63 @@ The **UPF** is used as the data plane to handle **user data traffic** between th
 - **Anchor Point to Mobility** → Offers seamless handovers to maintain continuous sessions in data.
 
 In **Open5GS**, UPF is used to run in ideal synchronization with SMF in order to achieve **minimum delay and ideal transmission**.
+
+UPF-1 yaml file: 
+```yaml
+global:
+
+upf:
+  pfcp:
+    server:
+      - address: upf1.open5gs.org
+    client:
+  gtpu:
+    server:
+      - address: upf1.open5gs.org
+  metrics:
+    server:
+      - address: upf1.open5gs.org
+        port: 9090
+  session:
+    - subnet: 10.45.0.0/16
+      gateway: 10.45.0.1
+      dnn: internet
+      dev: ogstun
+      qos:
+      - apn: internet
+        ulrate: 500Mbps  # Uplink bandwidth
+        dlrate: 1Gbps    # Downlink bandwidth
+```
+
+
+
+```logs
+2025-03-01 23:55:42 03/01 22:55:42.159: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+2025-03-01 23:55:42 03/01 22:55:42.160: [app] INFO: File Logging: '/var/log/open5gs/upf1.log' (../lib/app/ogs-init.c:136)
+2025-03-01 23:55:42 03/01 22:55:42.263: [pfcp] WARNING: unknown key `qos` (../lib/pfcp/context.c:827)
+2025-03-01 23:55:42 03/01 22:55:42.270: [metrics] INFO: metrics_server() [http://upf1.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+2025-03-01 23:55:42 03/01 22:55:42.271: [pfcp] INFO: pfcp_server() [10.33.33.6]:8805 (../lib/pfcp/path.c:30)
+2025-03-01 23:55:42 03/01 22:55:42.271: [gtp] INFO: gtp_server() [10.33.33.6]:2152 (../lib/gtp/path.c:30)
+2025-03-01 23:55:42 03/01 22:55:42.271: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+2025-03-01 23:55:43 03/01 22:55:43.575: [pfcp] INFO: ogs_pfcp_connect() [10.33.33.21]:8805 (../lib/pfcp/path.c:61)
+2025-03-01 23:55:43 03/01 22:55:43.580: [upf] INFO: PFCP associated [10.33.33.21]:8805 (../src/upf/pfcp-sm.c:184)
+2025-03-01 23:56:06 03/01 22:56:06.664: [upf] INFO: [Added] Number of UPF-Sessions is now 1 (../src/upf/context.c:207)
+2025-03-01 23:56:06 03/01 22:56:06.665: [gtp] INFO: gtp_connect() [10.33.33.21]:2152 (../lib/gtp/path.c:60)
+2025-03-01 23:56:06 03/01 22:56:06.666: [upf] INFO: UE F-SEID[UP:0x16b CP:0x6a3] APN[internet] PDN-Type[1] IPv4[10.45.0.2] IPv6[] (../src/upf/context.c:493)
+2025-03-01 23:56:06 03/01 22:56:06.666: [upf] INFO: UE F-SEID[UP:0x16b CP:0x6a3] APN[internet] PDN-Type[1] IPv4[10.45.0.2] IPv6[] (../src/upf/context.c:493)
+2025-03-01 23:56:06 03/01 22:56:06.677: [gtp] INFO: gtp_connect() [10.33.33.25]:2152 (../lib/gtp/path.c:60)
+2025-03-01 23:56:07 03/01 22:56:07.222: [upf] INFO: [Added] Number of UPF-Sessions is now 2 (../src/upf/context.c:207)
+2025-03-01 23:56:07 03/01 22:56:07.222: [upf] INFO: UE F-SEID[UP:0x98c CP:0x87b] APN[internet] PDN-Type[1] IPv4[10.45.0.3] IPv6[] (../src/upf/context.c:493)
+2025-03-01 23:56:07 03/01 22:56:07.222: [upf] INFO: UE F-SEID[UP:0x98c CP:0x87b] APN[internet] PDN-Type[1] IPv4[10.45.0.3] IPv6[] (../src/upf/context.c:493)
+2025-03-01 23:56:08 03/01 22:56:08.344: [upf] INFO: [Added] Number of UPF-Sessions is now 3 (../src/upf/context.c:207)
+2025-03-01 23:56:08 03/01 22:56:08.348: [upf] INFO: UE F-SEID[UP:0x5f4 CP:0xb2] APN[internet] PDN-Type[1] IPv4[10.45.0.4] IPv6[] (../src/upf/context.c:493)
+2025-03-01 23:56:08 03/01 22:56:08.349: [upf] INFO: UE F-SEID[UP:0x5f4 CP:0xb2] APN[internet] PDN-Type[1] IPv4[10.45.0.4] IPv6[] (../src/upf/context.c:493)
+2025-03-01 23:56:08 03/01 22:56:08.374: [gtp] INFO: gtp_connect() [10.33.33.24]:2152 (../lib/gtp/path.c:60)
+```
+
+
+As we have multiple log files present in our project files.
+
 
 #### 2.2.4 NRF (Network Repository Function)
 
@@ -149,6 +433,324 @@ Some among these responsibilities:
 - **Session Management Support** → Enables SMF to dynamically apply policy to user sessions.
 - **Charging Rules Provisioning** → Defines and applies charging rules for data usage and service prioritization.
 In **Open5GS**, PCF also offers an interface to have every core network entity communicating efficiently in an effort to render service-based architecture (SBA) dynamic and scalable just like NRF.
+
+
+```yaml
+pcf:
+  sbi:
+    server:
+      - address: pcf.open5gs.org
+        port: 80
+    client:
+      nrf:
+        - uri: http://nrf.open5gs.org:80
+  metrics:
+    server:
+      - address: pcf.open5gs.org
+        port: 9090
+  
+  policy:
+    - supi_range:
+        - 999700000000001-999709999999999
+      plmn_id:
+        mcc: 262
+        mnc: 01
+      slice:
+        - sst: 1  # eMBB Regular
+          sd: 000001
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 50    # 50 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 10     # 10 Mbps
+                  unit: 2
+              qos:
+                index: 7
+                arp:
+                  priority_level: 7 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 1  # eMBB Premium
+          sd: 000002
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 100    # 100 Mbps
+                  unit: 2
+                uplink:
+                  value: 20     # 20 Mbps
+                  unit: 2
+              qos:
+                index: 4
+                arp:
+                  priority_level: 5  
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1    
+        - sst: 1  # eMBB Public Wi-Fi
+          sd: 000003
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 10    # 10 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 5     # 5 Mbps
+                  unit: 2
+              qos:
+                index: 9
+                arp:
+                  priority_level: 9 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 2  # URLLC Autonomous Vehicles
+          sd: 000001
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 10    # 10 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 10     # 10 Mbps
+                  unit: 2
+              qos:
+                index: 3
+                arp:
+                  priority_level: 2 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 2  # URLLC Remote Surgery
+          sd: 000002
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 100    # 100 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 50     # 50 Mbps
+                  unit: 2
+              qos:
+                index: 1
+                arp:
+                  priority_level: 1 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 2  # URLLC Industrial Automation
+          sd: 000003
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 50    # 50 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 50     # 50 Mbps
+                  unit: 2
+              qos:
+                index: 2
+                arp:
+                  priority_level: 3 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 3  # mMTC Low-data IoT
+          sd: 000001
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 500    # 500 Kbps
+                  unit: 1       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 500     # 500 Kbps
+                  unit: 1
+              qos:
+                index: 7
+                arp:
+                  priority_level: 9 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 3  # mMTC Smart Cities
+          sd: 000002
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 1    # 1 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 1     # 1 Mbps
+                  unit: 2
+              qos:
+                index: 7
+                arp:
+                  priority_level: 8 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+
+```
+
+As here shown only 8 slices are allowed in PCF. As we have defined more than those slices. So we have seen in the test cases that the other slices weren't able to connect.
+
+
+```logs
+2025-03-01 23:55:45 UERANSIM v3.2.6
+2025-03-01 23:55:45 [2025-03-01 22:55:45.803] [nas] [info] UE switches to state [MM-DEREGISTERED/PLMN-SEARCH]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.817] [rrc] [debug] New signal detected for cell[1], total [1] cells in coverage
+2025-03-01 23:55:45 [2025-03-01 22:55:45.837] [nas] [info] Selected plmn[262/01]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.872] [rrc] [info] Selected cell plmn[262/01] tac[1] category[SUITABLE]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.875] [nas] [info] UE switches to state [MM-DEREGISTERED/PS]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.875] [nas] [info] UE switches to state [MM-DEREGISTERED/NORMAL-SERVICE]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.875] [nas] [debug] Initial registration required due to [MM-DEREG-NORMAL-SERVICE]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.899] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.899] [nas] [debug] Sending Initial Registration
+2025-03-01 23:55:45 [2025-03-01 22:55:45.976] [nas] [info] UE switches to state [MM-REGISTER-INITIATED]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.976] [rrc] [debug] Sending RRC Setup Request
+2025-03-01 23:55:45 [2025-03-01 22:55:45.982] [rrc] [info] RRC connection established
+2025-03-01 23:55:45 [2025-03-01 22:55:45.983] [rrc] [info] UE switches to state [RRC-CONNECTED]
+2025-03-01 23:55:45 [2025-03-01 22:55:45.983] [nas] [info] UE switches to state [CM-CONNECTED]
+2025-03-01 23:55:56 [2025-03-01 22:55:56.013] [nas] [error] Initial Registration failed [PAYLOAD_NOT_FORWARDED]
+2025-03-01 23:55:56 [2025-03-01 22:55:56.013] [nas] [debug] Handling Registration Reject abnormal case
+2025-03-01 23:55:56 [2025-03-01 22:55:56.014] [nas] [info] UE switches to state [MM-DEREGISTERED/ATTEMPTING-REGISTRATION]
+2025-03-01 23:56:06 [2025-03-01 22:56:06.889] [nas] [debug] NAS timer[3511] expired [1]
+2025-03-01 23:56:06 [2025-03-01 22:56:06.890] [nas] [debug] Initial registration required due to [T3511-EXPIRY-IN-ATT-REG]
+2025-03-01 23:56:06 [2025-03-01 22:56:06.890] [nas] [debug] Sending Initial Registration
+2025-03-01 23:56:06 [2025-03-01 22:56:06.891] [nas] [info] UE switches to state [MM-REGISTER-INITIATED]
+2025-03-01 23:56:06 [2025-03-01 22:56:06.964] [nas] [debug] Authentication Request received
+2025-03-01 23:56:07 [2025-03-01 22:56:07.008] [nas] [debug] Security Mode Command received
+2025-03-01 23:56:07 [2025-03-01 22:56:07.012] [nas] [debug] Selected integrity[2] ciphering[0]
+2025-03-01 23:56:07 [2025-03-01 22:56:07.067] [nas] [debug] Registration accept received
+2025-03-01 23:56:07 [2025-03-01 22:56:07.070] [nas] [info] UE switches to state [MM-REGISTERED/NORMAL-SERVICE]
+2025-03-01 23:56:07 [2025-03-01 22:56:07.072] [nas] [debug] Sending Registration Complete
+2025-03-01 23:56:07 [2025-03-01 22:56:07.072] [nas] [info] Initial Registration is successful
+2025-03-01 23:56:07 [2025-03-01 22:56:07.074] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:07 [2025-03-01 22:56:07.076] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:07 [2025-03-01 22:56:07.107] [nas] [debug] Configuration Update Command received
+2025-03-01 23:56:07 [2025-03-01 22:56:07.111] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:07 [2025-03-01 22:56:07.809] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:07 [2025-03-01 22:56:07.810] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:07 [2025-03-01 22:56:07.849] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:08 [2025-03-01 22:56:08.910] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:08 [2025-03-01 22:56:08.911] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:08 [2025-03-01 22:56:08.945] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:10 [2025-03-01 22:56:10.016] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:10 [2025-03-01 22:56:10.017] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:10 [2025-03-01 22:56:10.097] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:11 [2025-03-01 22:56:11.117] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:11 [2025-03-01 22:56:11.118] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:11 [2025-03-01 22:56:11.147] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:12 [2025-03-01 22:56:12.218] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:12 [2025-03-01 22:56:12.219] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:12 [2025-03-01 22:56:12.231] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:13 [2025-03-01 22:56:13.332] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:13 [2025-03-01 22:56:13.333] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:13 [2025-03-01 22:56:13.368] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:14 [2025-03-01 22:56:14.324] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:14 [2025-03-01 22:56:14.329] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:14 [2025-03-01 22:56:14.385] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+2025-03-01 23:56:14 [2025-03-01 22:56:14.433] [nas] [debug] Sending PDU Session Establishment Request
+2025-03-01 23:56:14 [2025-03-01 22:56:14.434] [nas] [debug] UAC access attempt is allowed for identity[0], category[MO_sig]
+2025-03-01 23:56:14 [2025-03-01 22:56:14.440] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
+```
+As PCF doesn't allowed our slices 3-000003,4-000001, 4-000002, 4-000003. So, In this we also get a clear confirmation that our slicing and network qos on are working fine. 
+
+Next we will show you the logs of pcf:
+
+```logs
+2025-03-01 23:55:48 Open5GS daemon v2.7.2
+2025-03-01 23:55:48 
+2025-03-01 23:55:48 03/01 22:55:48.789: [app] INFO: Configuration: '/etc/open5gs/custom/pcf.yaml' (../lib/app/ogs-init.c:133)
+2025-03-01 23:55:48 03/01 22:55:48.790: [app] INFO: File Logging: '/var/log/open5gs/pcf.log' (../lib/app/ogs-init.c:136)
+2025-03-01 23:55:48 03/01 22:55:48.851: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:80] (../lib/sbi/context.c:426)
+2025-03-01 23:55:48 03/01 22:55:48.856: [app] INFO: POLICY config added [1] (../lib/app/ogs-config.c:1185)
+2025-03-01 23:55:48 03/01 22:55:48.856: [app] INFO: SLICE config added [1] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.882: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.883: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.885: [app] INFO: QCI[7] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.886: [app] INFO: ARP[7:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:48 03/01 22:55:48.888: [app] INFO: AMBR[Downlink:50000000:Uplink:10000000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:48 03/01 22:55:48.889: [app] INFO: SLICE config added [2] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.889: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.890: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.890: [app] INFO: QCI[4] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.890: [app] INFO: ARP[5:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:48 03/01 22:55:48.891: [app] INFO: AMBR[Downlink:100000000:Uplink:20000000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:48 03/01 22:55:48.894: [app] INFO: SLICE config added [3] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.899: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.900: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.901: [app] INFO: QCI[9] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.901: [app] INFO: ARP[9:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:48 03/01 22:55:48.905: [app] INFO: AMBR[Downlink:10000000:Uplink:5000000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:48 03/01 22:55:48.905: [app] INFO: SLICE config added [4] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.906: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.906: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.906: [app] INFO: QCI[3] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.906: [app] INFO: ARP[2:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:48 03/01 22:55:48.907: [app] INFO: AMBR[Downlink:10000000:Uplink:10000000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:48 03/01 22:55:48.912: [app] INFO: SLICE config added [5] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.912: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.913: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.914: [app] INFO: QCI[1] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.914: [app] INFO: ARP[1:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:48 03/01 22:55:48.914: [app] INFO: AMBR[Downlink:100000000:Uplink:50000000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:48 03/01 22:55:48.915: [app] INFO: SLICE config added [6] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.915: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.960: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.963: [app] INFO: QCI[2] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.979: [app] INFO: ARP[3:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:48 03/01 22:55:48.980: [app] INFO: AMBR[Downlink:50000000:Uplink:50000000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:48 03/01 22:55:48.981: [app] INFO: SLICE config added [7] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.981: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.982: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.983: [app] INFO: QCI[7] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.983: [app] INFO: ARP[9:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:48 03/01 22:55:48.990: [app] INFO: AMBR[Downlink:500000:Uplink:500000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:48 03/01 22:55:48.990: [app] INFO: SLICE config added [8] (../lib/app/ogs-config.c:1251)
+2025-03-01 23:55:48 03/01 22:55:48.991: [app] INFO: SESSION config added [1] (../lib/app/ogs-config.c:1354)
+2025-03-01 23:55:48 03/01 22:55:48.991: [app] INFO: NAME[internet] (../lib/app/ogs-config.c:921)
+2025-03-01 23:55:48 03/01 22:55:48.992: [app] INFO: QCI[7] (../lib/app/ogs-config.c:922)
+2025-03-01 23:55:48 03/01 22:55:48.992: [app] INFO: ARP[8:1:1] (../lib/app/ogs-config.c:923)
+2025-03-01 23:55:49 03/01 22:55:49.003: [app] INFO: AMBR[Downlink:1000000:Uplink:1000000] (../lib/app/ogs-config.c:927)
+2025-03-01 23:55:49 03/01 22:55:49.023: [metrics] INFO: metrics_server() [http://pcf.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+2025-03-01 23:55:49 03/01 22:55:49.055: [dbi] INFO: MongoDB URI: 'mongodb://db.open5gs.org/open5gs' (../lib/dbi/ogs-mongoc.c:130)
+2025-03-01 23:55:49 03/01 22:55:49.056: [sbi] INFO: NF Service [npcf-am-policy-control] (../lib/sbi/context.c:1829)
+2025-03-01 23:55:49 03/01 22:55:49.058: [sbi] INFO: NF Service [npcf-smpolicycontrol] (../lib/sbi/context.c:1829)
+2025-03-01 23:55:49 03/01 22:55:49.062: [sbi] INFO: NF Service [npcf-policyauthorization] (../lib/sbi/context.c:1829)
+2025-03-01 23:55:49 03/01 22:55:49.080: [sbi] INFO: nghttp2_server() [http://pcf.open5gs.org]:80 (../lib/sbi/nghttp2-server.c:419)
+2025-03-01 23:55:49 03/01 22:55:49.084: [app] INFO: PCF initialize...done (../src/pcf/app.c:31)
+2025-03-01 23:55:49 03/01 22:55:49.101: [sbi] INFO: [514c2000-f6f0-41ef-af69-474c32649520] NF registered [Heartbeat:10s] (../lib/sbi/nf-sm.c:208)
+2025-03-01 23:55:49 03/01 22:55:49.129: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:49 03/01 22:55:49.131: [sbi] INFO: [51772890-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:49.114497+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:49 03/01 22:55:49.135: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:49 03/01 22:55:49.135: [sbi] INFO: [5177d2ae-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:49.117955+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:55:49 03/01 22:55:49.135: [sbi] INFO: NF EndPoint(fqdn) setup [nrf.open5gs.org:0] (../lib/sbi/nnrf-handler.c:949)
+2025-03-01 23:55:49 03/01 22:55:49.135: [sbi] INFO: [51790c32-f6f0-41ef-b330-a3613a54dcba] Subscription created until 2025-03-02T22:55:49.126206+00:00 [duration:86400000000,validity:86400.000000,patch:43200.000000] (../lib/sbi/nnrf-handler.c:868)
+2025-03-01 23:56:05 03/01 22:56:05.813: [pcf] INFO: NF EndPoint(fqdn) setup [amf1.open5gs.org:0] (../src/pcf/npcf-handler.c:114)
+2025-03-01 23:56:05 03/01 22:56:05.813: [sbi] WARNING: Try to discover [nudr-dr] (../lib/sbi/path.c:548)
+2025-03-01 23:56:05 03/01 22:56:05.815: [sbi] INFO: [5150e086-f6f0-41ef-a361-f7990e831ad0] (NRF-discover) NF registered [type:NULL] (../lib/sbi/nnrf-handler.c:1245)
+```
+
+
 
 ### 2.3 Network Slicing in 5G and Open5GS
 Network slicing is one of the most significant features of 5G networks that allows for several virtual networks to operate over a shared physical infrastructure. Every slice represents an individual, end-to-end logical network tailored to specific applications or services. This allows operators to allocate network resources effectively and meet various requirements of different industries, such as IoT, autonomous vehicles, smart cities, and enterprise networks.
@@ -287,20 +889,21 @@ In an Open5GS 5G network, network slicing is established by specifying the targe
 
 Below is a tabular representation based on its UE IMSI numbers, its SST, its SD, its Network Slice Type, and its 5G Core elements such as gNB, UPF, AMF, and Data Network (DN).
 
-| **UE IMSI**          | **SST (Slice Service Type)** | **SD (Slice Differentiator)** | **Network Slice Type**                      | **gNB** | **AMF** | **SMF** | **UPF** | **Data Network (DN)** |
-|----------------------|---------------------------|-----------------------------|-----------------------------------|--------|------|------|------|----------------|
-| 262011234567890     | 1                         | 0x000001                    | eMBB (Enhanced Mobile Broadband) | gNB 1  | AMF 1 | SMF 1 | UPF 1 | Data Network 01 |
-| 262011234567891     | 1                         | 0x000002                    | eMBB (Enhanced Mobile Broadband) | gNB 1  | AMF 1 | SMF 1 | UPF 1 | Data Network 01 |
-| 262011234567892     | 1                         | 0x000003                    | eMBB (Enhanced Mobile Broadband) | gNB 2  | AMF 1 | SMF 1 | UPF 1 | Data Network 01 |
-| 262011234567893     | 2                         | 0x000001                    | mMTC (Massive Machine-Type Communications) | gNB 3  | AMF 1 | SMF 2 | UPF 2 | Data Network 02 |
-| 262011234567894     | 2                         | 0x000002                    | mMTC (Massive Machine-Type Communications) | gNB 3  | AMF 1 | SMF 2 | UPF 2 | Data Network 02 |
-| 262011234567895     | 2                         | 0x000003                    | mMTC (Massive Machine-Type Communications) | gNB 3  | AMF 1 | SMF 2 | UPF 2 | Data Network 02 |
-| 262011234567896     | 3                         | 0x000001                    | uRLLC (Ultra-Reliable Low Latency Communication) | gNB 4  | AMF 2 | SMF 3 | UPF 3 | Data Network 03 |
-| 262011234567897     | 3                         | 0x000002                    | uRLLC (Ultra-Reliable Low Latency Communication) | gNB 4  | AMF 2 | SMF 3 | UPF 3 | Data Network 03 |
-| 262011234567898     | 3                         | 0x000003                    | uRLLC (Ultra-Reliable Low Latency Communication) | gNB 4  | AMF 2 | SMF 3 | UPF 3 | Data Network 03 |
-| 262011234567899     | 4                         | 0x000001                    | Private/Enterprise Network Slice | gNB 5  | AMF 3 | SMF 4 | UPF 4 | Data Network 04 |
-| 262011234567900     | 4                         | 0x000002                    | Private/Enterprise Network Slice | gNB 5  | AMF 3 | SMF 4 | UPF 4 | Data Network 04 |
-| 262011234567901     | 4                         | 0x000003                    | Private/Enterprise Network Slice | gNB 5  | AMF 3 | SMF 4 | UPF 4 | Data Network 04 |
+| **IMSI**          | **SST** | **SD**     | **Slice Type**                   | **gNB** | **AMF** | **SMF** | **UPF** | **DN**  |
+|------------------|--------|-----------|--------------------------------|------|------|------|------|------|
+| 262011234567890 | 1      | 0x000001  | eMBB                           | gNB1 | AMF1 | SMF1 | UPF1 | DN01 |
+| 262011234567891 | 1      | 0x000002  | eMBB                           | gNB1 | AMF1 | SMF1 | UPF1 | DN01 |
+| 262011234567892 | 1      | 0x000003  | eMBB                           | gNB2 | AMF1 | SMF1 | UPF1 | DN01 |
+| 262011234567893 | 2      | 0x000001  | mMTC                           | gNB3 | AMF1 | SMF2 | UPF2 | DN02 |
+| 262011234567894 | 2      | 0x000002  | mMTC                           | gNB3 | AMF1 | SMF2 | UPF2 | DN02 |
+| 262011234567895 | 2      | 0x000003  | mMTC                           | gNB3 | AMF1 | SMF2 | UPF2 | DN02 |
+| 262011234567896 | 3      | 0x000001  | uRLLC                          | gNB4 | AMF2 | SMF3 | UPF3 | DN03 |
+| 262011234567897 | 3      | 0x000002  | uRLLC                          | gNB4 | AMF2 | SMF3 | UPF3 | DN03 |
+| 262011234567898 | 3      | 0x000003  | uRLLC                          | gNB4 | AMF2 | SMF3 | UPF3 | DN03 |
+| 262011234567899 | 4      | 0x000001  | Private Network                | gNB5 | AMF3 | SMF4 | UPF4 | DN04 |
+| 262011234567900 | 4      | 0x000002  | Private Network                | gNB5 | AMF3 | SMF4 | UPF4 | DN04 |
+| 262011234567901 | 4      | 0x000003  | Private Network                | gNB5 | AMF3 | SMF4 | UPF4 | DN04 |
+
 
 #### Explanation of Columns:
 - **UE IMSI** → All devices with a single identity.
@@ -489,13 +1092,12 @@ smf2:
     - upf2  # Ensures UPF is active before starting SMF
 ```
 
-## 5.4. Modifying MCC and MNC 
+### 5.4. Modifying MCC and MNC 
 
 As part of our setup, we updated the Mobile Country Code (MCC) and Mobile Network Code (MNC) to 262-01, based on the professor’s(project) requirements. The MCC (262) corresponds to Germany, and the MNC (01) is typically assigned to a specific mobile network operator. These values are crucial as they define the identity of our network within the 5G core and ensure proper registration and connectivity of UEs.
 
 By adjusting these parameters, we ensured that our test environment aligns with the required specifications, allowing for accurate testing and validation of network functions. This change is especially important for simulating real-world scenarios and ensuring compatibility with other components in the Open5GS setup.
 
-# MCC and MNC Configuration
 
 | **Parameter** | **Value** | **Description** |
 |--------------|----------|----------------|
@@ -914,8 +1516,8 @@ Database connectivity is mandatory for network-based information such as subscri
 | **Traffic Logs** | Tracks traffic in and out of UPF and Data Network. | **Monitoring Metrics** | Stores real-time performance data from Prometheus. |
 
 As the important role of Database is that:
-- 'Authentication and Handling of Sessions:' The AMF pulls subscriber authentication information out of the database.
-- 'Network Slicing Assignment:' The slicing parameters (SST/SD) are fetched when a UE connection request is obtained from the database.*
+- Authentication and Handling of Sessions: The AMF pulls subscriber authentication information out of the database.
+- Network Slicing Assignment: The slicing parameters (SST/SD) are fetched when a UE connection request is obtained from the database.
 
 
 <p align="center">
