@@ -1094,6 +1094,15 @@ smf2:
     - upf2  # Ensures UPF is active before starting SMF
 ```
 
+
+
+   <p align="center">
+<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/3cdea129582c1a28a1badecac99e80f6fdfcbe26/Images/Zaka_Screenshoots/31.%20Tying%20to%20Implement%20orchestration/Screenshot%202025-02-01%20at%203.37.35%E2%80%AFPM.png" width="1050"/>
+	 <p align="center">Figure 5.2: Multiple NFs </p>
+</p>
+     
+
+
 ### 5.4. Modifying MCC and MNC 
 
 As part of our setup, we updated the Mobile Country Code (MCC) and Mobile Network Code (MNC) to 262-01, based on the professor’s(project) requirements. The MCC (262) corresponds to Germany, and the MNC (01) is typically assigned to a specific mobile network operator. These values are crucial as they define the identity of our network within the 5G core and ensure proper registration and connectivity of UEs.
