@@ -30,15 +30,15 @@
    2.3 [Why Network Slicing?](###Why_Network_Slicing?)
    2.4 [Role of NFs in Slicing](###Role_of_NFs_in_Slicing)
    
-3. [Architecture Overview](#Architecture_Overview)
+4. [Architecture Overview](#Architecture_Overview)
    3.1 [Topology Design and Slicing Based on Application](##Topology_Design_and_Slicing)
    3.2 [Design Challenges and Limitations](##Design_Challenges_and_Limitations)
 
-4. [Requirements and Planning](#Requirements_and_Planning)
+5. [Requirements and Planning](#Requirements_and_Planning)
    4.1 [Hardware and Development Requirements](##Hardware_and_Development_Requirements)
    4.2 [Milestones and Issues](##Milestones_and_Issues)
 
- 5. [Development and Deployment](#Development_and_Deployment)
+ 6. [Development and Deployment](#Development_and_Deployment)
    5.1 [Setting Up the Docker Environment](##Setting_Up_Docker_Environment)
    5.2 [Repo Clone and Test Deployments](##Repo_Clone_and_Test_Deployments)
    5.3 [Creating Multiple NFs](##Creating_Multiple_NFs)
@@ -53,7 +53,7 @@
    5.12 [Deploying Webhook Package under Project Docker](##Deploying_Webhook_Package)
    5.13 [cAdvisor](##cAdvisor)
 
-6. [Management and Orchestration](#Management_and_Orchestration)
+7. [Management and Orchestration](#Management_and_Orchestration)
    6.1 [Adding all NFs in Prometheus](##Adding_NFs_in_Prometheus)
    6.2 [Dashboards in Grafana](##Dashboards_in_Grafana)
    6.3 [Database Connectivity, Storage, and Processing](##Database_Connectivity_Storage_Processing)
@@ -65,7 +65,7 @@
    6.9 [Restart Policy and Other Policies](##Restart_Policy_and_Other_Policies)
    6.10 [Management and Orchestration Workflow](##Management_and_Orchestration_Workflow)
 
-7. [Testing Script](Testing_Script)
+8. [Testing Script](Testing_Script)
    7.1 [iperf3 Testing of UEs](iperf3_Testing_of_UEs)
    7.2 [Registering Multiple UEs and Establishing PDU Sessions](Registering_Multiple_UEs_and_Establishing_PDU_Sessions)
    7.3 [Network Slicing Verification](Network_Slicing_Verification)
@@ -73,8 +73,8 @@
    7.5 [Performance Testing (Throughput & Latency)](Performance_Testing_Throughput_Latency)
    7.6 [Failure Recovery Test](Failure_Recovery_Test)
 
-8. [Conclusion](Conclusion)
-9. [References](References)
+9. [Conclusion](Conclusion)
+10. [References](References)
 
 
 ## 1. Introduction
