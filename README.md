@@ -19,8 +19,8 @@
 
 
 1. [Introduction](#Introduction)
-2. [Literature Review](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs?tab=readme-ov-file#2-literature-review)
-   2.1 [Overview of Open5GS and 5G Core Networks](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs?tab=readme-ov-file#21-overview-of-open5gs-and-5g-core-networks)
+2. [Literature Review](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs?tab=readme-ov-file)
+   2.1 [Overview of Open5GS and 5G Core Networks](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs?tab=readme-ov-file)
    2.2 [Key Components of Open5GS](https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs?tab=readme-ov-file#22-key-components-of-open5gs)
     2.2.1 [AMF (Access and Mobility Management Function)](###AMF_(Access_and_Mobility_Management_Function))
     2.2.2 [SMF (Session Management Function)](###SMF_(Session_Management_Function))
