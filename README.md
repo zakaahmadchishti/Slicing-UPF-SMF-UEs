@@ -1,21 +1,6 @@
 
-                                     Implementing of Slicing-UPF/SMF-UEs in 5G Core Network Deployment
+                                     Implementing of Slicing in 5G Core Network Deployment
 
-<p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/resources/images/FRA-UAS_Logo_rgb.jpg" width="450"/>
-</p>
-
-<h1 align="center">Team nyzers</h1>
-<p align="center">
-    <h3 align="center">Master of Engineering</h3>
-    <h3 align="center">Information Technology</h3>
-     <h5 align="center">Zaka Ahmed  (1436851) </h5>
-    <h5 align="center">Nabeela Maham (1400502)</h5> 
-    <h5 align="center">Saad Jamil (1427200)</h5> 
-    <h5 align="center">Muhammad Haris (1440274) </h5>
-    <h5 align="center">Yatish Sharma (1457597) </h5>
-</p>
-<a id="toc"></a>
 
 ## Feature overview
 *   [x] 5G CN with multiple UPFs selected on S-NSSAI
