@@ -1,5 +1,5 @@
 
-                                     Implementing of Slicing in 5G Core Network Deployment
+                                     Implementing of Slicing-UPF/SMF-UEs in 5G Core Network Deployment
 
 
 ## Feature overview
