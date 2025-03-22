@@ -1,0 +1,29 @@
+mcc: '262'
+mnc: '01'
+
+nci: '0x00000010'
+idLength: 32
+tac: 1
+
+linkIp: gnb1.ueransim.org
+ngapIp: gnb1.ueransim.org
+gtpIp: gnb1.ueransim.org
+
+metrics:
+  enable: true
+  address: 0.0.0.0
+  port: 9090
+
+amfConfigs:
+  - address: amf1.open5gs.org
+    port: 38412
+
+slices:
+  - sst: 1
+    sd: 000001
+  - sst: 1
+    sd: 000002
+  - sst: 1
+    sd: 000003
+
+ignoreStreamIds: true

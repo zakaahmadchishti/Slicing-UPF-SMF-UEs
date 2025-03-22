@@ -1,0 +1,11 @@
+route:
+  receiver: webhook
+  group_wait: 0s
+  group_interval: 9999h
+  repeat_interval: 9999h  # Ensures no repeated alerts
+
+receivers:
+  - name: "webhook"
+    webhook_configs:
+      - url: "http://webhook:5001/alert"
+        send_resolved: false  # Prevents duplicate alerts when resolved

@@ -1,0 +1,72 @@
+global:
+  scrape_interval: 1s  # Adjust as needed
+
+rule_files:
+  - alert.rules.yml  # Path to your alert rules file
+
+
+
+scrape_configs:
+  - job_name: amf1
+    static_configs:
+      - targets: ["amf1.open5gs.org:9090"]
+  - job_name: pcf
+    static_configs:
+      - targets: ["pcf.open5gs.org:9090"]
+  - job_name: smf1
+    static_configs:
+      - targets: ["smf1.open5gs.org:9090"]
+  - job_name: smf2
+    static_configs:
+      - targets: ["smf2.open5gs.org:9090"]
+  - job_name: smf3
+    static_configs:
+      - targets: ["smf3.open5gs.org:9090"]
+  - job_name: smf4
+    static_configs:
+      - targets: ["smf4.open5gs.org:9090"]
+  - job_name: smf5
+    static_configs:
+      - targets: ["smf5.open5gs.org:9090"]
+  - job_name: upf1
+    static_configs:
+      - targets: ["upf1.open5gs.org:9090"]
+  - job_name: upf2
+    static_configs:
+      - targets: ["upf2.open5gs.org:9090"]
+  - job_name: upf5
+    static_configs:
+      - targets: ["upf5.open5gs.org:9090"]
+  - job_name: upf3
+    static_configs:
+      - targets: ["upf3.open5gs.org:9090"]
+  - job_name: upf4
+    static_configs:
+      - targets: ["upf4.open5gs.org:9090"] 
+  - job_name: gnb1
+    static_configs:
+      - targets: ["gnb1.ueransim.org:9090"]
+  - job_name: amf2
+    static_configs:
+      - targets: ["amf2.open5gs.org:9090"]
+  - job_name: nssf
+    static_configs:
+      - targets: ["nssf.open5gs.org:9090"]
+  - job_name: nrf
+    static_configs:
+      - targets: ["nrf.open5gs.org:9090"]
+  - job_name: amf3
+    static_configs:
+      - targets: ["amf3.open5gs.org:9090"]
+  - job_name: cadvisor
+    static_configs:
+      - targets: ["cadvisor:8080"]
+
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
+
+  

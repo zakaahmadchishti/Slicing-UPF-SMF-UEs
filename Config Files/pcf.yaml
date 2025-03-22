@@ -1,0 +1,180 @@
+db_uri: mongodb://db.open5gs.org/open5gs
+
+logger:
+  file:
+    path: /var/log/open5gs/pcf.log
+
+global:
+
+pcf:
+  sbi:
+    server:
+      - address: pcf.open5gs.org
+        port: 80
+    client:
+      nrf:
+        - uri: http://nrf.open5gs.org:80
+  metrics:
+    server:
+      - address: pcf.open5gs.org
+        port: 9090
+  
+  policy:
+    - supi_range:
+        - 999700000000001-999709999999999
+      plmn_id:
+        mcc: 262
+        mnc: 01
+      slice:
+        - sst: 1  # eMBB Regular
+          sd: 000001
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 50    # 50 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 10     # 10 Mbps
+                  unit: 2
+              qos:
+                index: 7
+                arp:
+                  priority_level: 7 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 1  # eMBB Premium
+          sd: 000002
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 100    # 100 Mbps
+                  unit: 2
+                uplink:
+                  value: 20     # 20 Mbps
+                  unit: 2
+              qos:
+                index: 4
+                arp:
+                  priority_level: 5  
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1    
+        - sst: 1  # eMBB Public Wi-Fi
+          sd: 000003
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 10    # 10 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 5     # 5 Mbps
+                  unit: 2
+              qos:
+                index: 9
+                arp:
+                  priority_level: 9 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 2  # URLLC Autonomous Vehicles
+          sd: 000001
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 10    # 10 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 10     # 10 Mbps
+                  unit: 2
+              qos:
+                index: 3
+                arp:
+                  priority_level: 2 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 2  # URLLC Remote Surgery
+          sd: 000002
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 100    # 100 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 50     # 50 Mbps
+                  unit: 2
+              qos:
+                index: 1
+                arp:
+                  priority_level: 1 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 2  # URLLC Industrial Automation
+          sd: 000003
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 50    # 50 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 50     # 50 Mbps
+                  unit: 2
+              qos:
+                index: 2
+                arp:
+                  priority_level: 3 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 3  # mMTC Low-data IoT
+          sd: 000001
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 500    # 500 Kbps
+                  unit: 1       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 500     # 500 Kbps
+                  unit: 1
+              qos:
+                index: 7
+                arp:
+                  priority_level: 9 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+        - sst: 3  # mMTC Smart Cities
+          sd: 000002
+          default_indicator: true
+          session:
+            - name: internet
+              type: 3
+              ambr:
+                downlink:
+                  value: 1    # 1 Mbps
+                  unit: 2       # 0: bps, 1: Kbps, 2: Mbps, 3: Gbps
+                uplink:
+                  value: 1     # 1 Mbps
+                  unit: 2
+              qos:
+                index: 7
+                arp:
+                  priority_level: 8 
+                  pre_emption_vulnerability: 1  
+                  pre_emption_capability: 1   
+

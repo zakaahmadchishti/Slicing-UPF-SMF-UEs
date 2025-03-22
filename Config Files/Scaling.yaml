@@ -1,0 +1,55 @@
+services:
+  smf:
+    image: "smf:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/smf
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/smf.yaml"
+    privileged: true
+    networks:
+      open5gs:
+        aliases:
+          - smf5.open5gs.org        
+    volumes:
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/logs:/var/log/open5gs
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/smf5.yaml:/app/smf5.yaml  # Corrected Path
+    configs:
+      - source: smf_config
+        target: /etc/open5gs/custom/smf.yaml
+    cap_add:
+      - NET_ADMIN
+
+  upf:
+    image: "upf:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/upf
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/upf.yaml"
+    privileged: true
+    networks:
+      open5gs:
+        aliases:
+          - upf5.open5gs.org
+    volumes:
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/upf5.yaml:/app/upf5.yaml  # Corrected Path
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/logs:/var/log/open5gs
+    configs:
+      - source: upf_config
+        target: /etc/open5gs/custom/upf.yaml
+    cap_add:
+      - NET_ADMIN
+
+networks:
+  open5gs:
+    external: true
+
+configs:
+  smf_config:
+    file: /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/smf5.yaml
+  upf_config:
+    file: /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/upf5.yaml
+  

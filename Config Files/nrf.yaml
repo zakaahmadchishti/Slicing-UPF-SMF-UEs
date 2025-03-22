@@ -1,0 +1,15 @@
+logger:
+  file:
+    path: /var/log/open5gs/nrf.log
+
+global:
+
+nrf:
+  sbi:
+    server:
+      - address: nrf.open5gs.org
+        port: 80
+  metrics:
+    server:
+      - address: nrf.open5gs.org
+        port: 9090

@@ -1,0 +1,23 @@
+logger:
+  file:
+    path: /var/log/open5gs/upf4.log
+
+global:
+
+upf:
+  pfcp:
+    server:
+      - address: upf4.open5gs.org
+    client:
+  gtpu:
+    server:
+      - address: upf4.open5gs.org
+  metrics:
+    server:
+      - address: upf4.open5gs.org
+        port: 9090
+  session:
+    - subnet: 10.48.0.0/16
+      gateway: 10.48.0.1
+      dnn: internet
+      dev: ogstun

@@ -1,0 +1,67 @@
+logger:
+  file:
+    path: /var/log/open5gs/smf4.log
+
+global:
+
+smf:
+  sbi:
+    server:
+      - address: smf4.open5gs.org
+        port: 80
+    client:
+      nrf:
+        - uri: http://nrf.open5gs.org:80
+      pcf:                           
+        - uri: http://pcf.open5gs.org:80        
+  pfcp:
+    server:
+      - address: smf4.open5gs.org
+    client:
+      upf:
+        - address: upf4.open5gs.org
+          dnn: internet
+  gtpu:
+    server:
+      - address: smf4.open5gs.org
+  metrics:
+    server:
+      - address: smf4.open5gs.org
+        port: 9090
+  
+  session:
+    - subnet: 10.48.0.0/16         
+      gateway: 10.48.0.1           
+      dnn: internet
+      ambr:
+        downlink:
+          value: 500  # 500 Mbps max per DNN
+          unit: 2
+        uplink:
+          value: 100  # 100 Mbps max per DNN
+          unit: 2              
+            
+  dns:
+    - 8.8.8.8
+    - 8.8.4.4
+  mtu: 1400
+  info:
+    - s_nssai:
+      - sst: 4
+        sd: 000001
+        dnn:
+          - internet
+      - sst: 4
+        sd: 000002
+        dnn:
+          - internet
+      - sst: 4
+        sd: 000003                
+        dnn:
+          - internet
+      
+      tai:
+        - plmn_id:
+            mcc: 262
+            mnc: 01
+          tac: 1
