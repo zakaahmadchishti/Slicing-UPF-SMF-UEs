@@ -1,0 +1,998 @@
+
+services:
+  db:
+    container_name: db
+    image: "mongo:${MONGODB_VERSION}"
+    command: "mongod --bind_ip 0.0.0.0 --port 27017"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+    networks:
+      open5gs:
+        aliases:
+          - db.open5gs.org
+    volumes:
+      - db_data:/data/db
+      - db_config:/data/configdb
+    ports:
+      - "0.0.0.0:27017:27017/tcp"
+    depends_on:
+    - upf1
+
+  nrf:
+    container_name: nrf
+    image: "nrf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/nrf.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - nrf.open5gs.org
+    volumes:
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/logs:/var/log/open5gs
+    configs:
+      - source: nrf_config
+        target: /etc/open5gs/custom/nrf.yaml
+    depends_on:
+    - upf1
+
+  ausf:
+    container_name: ausf
+    image: "ausf:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/ausf
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/ausf.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ausf.open5gs.org
+    volumes:
+      - ../../logs:/var/log/open5gs
+    configs:
+      - source: ausf_config
+        target: /etc/open5gs/custom/ausf.yaml
+    depends_on:
+      - nrf
+
+  udm:
+    container_name: udm
+    image: "udm:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/udm
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/udm.yaml"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      open5gs:
+        aliases:
+          - udm.open5gs.org
+    volumes:
+      - ../../logs:/var/log/open5gs
+    configs:
+      - source: udm_config
+        target: /etc/open5gs/custom/udm.yaml
+    depends_on:
+      - nrf
+
+  udr:
+    container_name: udr
+    image: "udr:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/udr.yaml"
+    restart: always
+    networks:
+      open5gs:
+        aliases:
+          - udr.open5gs.org
+    volumes:
+      - ../../logs:/var/log/open5gs
+    configs:
+      - source: udr_config
+        target: /etc/open5gs/custom/udr.yaml
+    depends_on:
+      - upf1
+
+  nssf:
+    container_name: nssf
+    image: "nssf:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/nssf
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/nssf.yaml"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      open5gs:
+        aliases:
+          - nssf.open5gs.org
+    volumes:
+      - ../../logs:/var/log/open5gs
+    configs:
+      - source: nssf_config
+        target: /etc/open5gs/custom/nssf.yaml
+    depends_on:
+      - nrf
+
+  bsf:
+    container_name: bsf
+    image: "bsf:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/bsf
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/bsf.yaml"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      open5gs:
+        aliases:
+          - bsf.open5gs.org
+    volumes:
+      - ../../logs:/var/log/open5gs
+    configs:
+      - source: bsf_config
+        target: /etc/open5gs/custom/bsf.yaml
+    depends_on:
+      - nrf
+
+  pcf:
+    container_name: pcf
+    image: "pcf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/pcf.yaml"
+    restart: always
+    networks:
+      open5gs:
+        aliases:
+          - pcf.open5gs.org
+    volumes:
+      - ../../logs:/var/log/open5gs
+    configs:
+      - source: pcf_config
+        target: /etc/open5gs/custom/pcf.yaml
+    depends_on:
+      - upf1
+
+  amf1:
+    container_name: amf1
+    image: "amf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/amf1.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - amf1.open5gs.org
+    volumes:
+      - ../../logs:/var/log/open5gs
+    configs:
+      - source: amf1_config
+        target: /etc/open5gs/custom/amf1.yaml
+    depends_on:
+      - nrf
+  
+
+
+  amf2:
+    container_name: amf2
+    image: "ghcr.io/borjis131/amf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/amf2.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - amf2.open5gs.org
+    configs:
+      - source: amf2_config
+        target: /etc/open5gs/custom/amf2.yaml
+    depends_on:
+      - nrf
+
+  amf3:
+    container_name: amf3
+    image: "ghcr.io/borjis131/amf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/amf3.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - amf3.open5gs.org
+    configs:
+      - source: amf3_config
+        target: /etc/open5gs/custom/amf3.yaml
+    depends_on:
+      - nrf
+
+  smf1:
+    container_name: slicing-upf_smf_ues-smf-1
+    image: "smf:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/smf
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/smf.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - smf1.open5gs.org
+    volumes:
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/logs:/var/log/open5gs
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/smf1.yaml:/etc/open5gs/custom/smf.yaml  # Corrected Path
+    configs:
+      - source: smf1_config
+        target: /etc/open5gs/custom/smf1.yaml
+    depends_on:
+      - nrf
+      - upf1
+
+
+  smf2:
+    container_name: slicing-upf_smf_ues-smf-2
+    image: "ghcr.io/borjis131/smf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/smf2.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - smf2.open5gs.org
+    configs:
+      - source: smf2_config
+        target: /etc/open5gs/custom/smf2.yaml
+    depends_on:
+      - nrf
+      - upf2
+
+  smf3:
+    container_name: slicing-upf_smf_ues-smf-3
+    image: "ghcr.io/borjis131/smf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/smf3.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - smf3.open5gs.org
+    configs:
+      - source: smf3_config
+        target: /etc/open5gs/custom/smf3.yaml
+    depends_on:
+      - nrf
+      - upf3
+
+  smf4:
+    container_name: slicing-upf_smf_ues-smf-4
+    image: "ghcr.io/borjis131/smf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/smf4.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - smf4.open5gs.org
+    configs:
+      - source: smf4_config
+        target: /etc/open5gs/custom/smf4.yaml
+    depends_on:
+      - nrf
+      - upf4
+
+  upf1:
+    container_name: slicing-upf_smf_ues-upf-1
+    image: "upf:${OPEN5GS_VERSION}"
+    build:
+      context: ../../images/upf
+      args:
+        - OPEN5GS_VERSION=${OPEN5GS_VERSION}
+        - UBUNTU_VERSION=${UBUNTU_VERSION}
+    command: "-c /etc/open5gs/custom/upf.yaml"
+    environment:
+    - INSTANCE_INDEX  # Passed during scaling
+    networks:
+      open5gs:
+        aliases:
+          - upf1.open5gs.org
+    volumes:
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/upf1.yaml:/etc/open5gs/custom/upf.yaml  # Corrected Path
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/logs:/var/log/open5gs
+    configs:
+      - source: upf1_config
+        target: /etc/open5gs/custom/upf1.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    deploy:
+      resources:
+        limits:
+          memory: 2G  # Increase from previous value
+        reservations:
+          memory: 1G  # Adjust as needed
+    healthcheck:
+     test: ["CMD", "curl", "-f", "http://localhost:9090"]  # Check if the UPF metrics endpoint is accessible
+     interval: 30s
+     retries: 3
+     timeout: 10s
+     start_period: 20s
+
+  upf2:
+    container_name: slicing-upf_smf_ues-upf-2
+    image: "ghcr.io/borjis131/upf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/upf2.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - upf2.open5gs.org
+    configs:
+      - source: upf2_config
+        target: /etc/open5gs/custom/upf2.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+     
+  upf3:
+    container_name: slicing-upf_smf_ues-upf-3
+    image: "ghcr.io/borjis131/upf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/upf3.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - upf3.open5gs.org
+    configs:
+      - source: upf3_config
+        target: /etc/open5gs/custom/upf3.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      
+  upf4:
+    container_name: slicing-upf_smf_ues-upf-4
+    image: "ghcr.io/borjis131/upf:${OPEN5GS_VERSION}"
+    command: "-c /etc/open5gs/custom/upf4.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - upf4.open5gs.org
+    configs:
+      - source: upf4_config
+        target: /etc/open5gs/custom/upf4.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+
+
+  gnb1:
+    container_name: gnb1
+    image: "ghcr.io/borjis131/gnb:v3.2.6"
+    command: "-c /UERANSIM/config/gnb1.yaml"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      open5gs:
+        aliases:
+          - gnb1.ueransim.org
+    configs:
+      - source: gnb1_config
+        target: /UERANSIM/config/gnb1.yaml
+    depends_on:
+      - amf1
+
+  gnb2:
+    container_name: gnb2
+    image: "ghcr.io/borjis131/gnb:v3.2.6"
+    command: "-c /UERANSIM/config/gnb2.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - gnb2.ueransim.org
+    configs:
+      - source: gnb2_config
+        target: /UERANSIM/config/gnb2.yaml
+    depends_on:
+      - amf1    
+
+  gnb3:
+    container_name: gnb3
+    image: "ghcr.io/borjis131/gnb:v3.2.6"
+    command: "-c /UERANSIM/config/gnb3.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - gnb3.ueransim.org
+    configs:
+      - source: gnb3_config
+        target: /UERANSIM/config/gnb3.yaml
+    depends_on:
+      - amf1    
+
+  gnb4:
+    container_name: gnb4
+    image: "ghcr.io/borjis131/gnb:v3.2.6"
+    command: "-c /UERANSIM/config/gnb4.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - gnb4.ueransim.org
+    configs:
+      - source: gnb4_config
+        target: /UERANSIM/config/gnb4.yaml
+    depends_on:
+      - amf2    
+
+  gnb5:
+    container_name: gnb5
+    image: "ghcr.io/borjis131/gnb:v3.2.6"
+    command: "-c /UERANSIM/config/gnb5.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - gnb5.ueransim.org
+    configs:
+      - source: gnb5_config
+        target: /UERANSIM/config/gnb5.yaml
+    depends_on:
+      - amf3  
+
+  ue1:
+    container_name: ue1
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue1.ueransim.org
+    configs:
+      - source: ue1_config
+        target: /UERANSIM/config/ue.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb1
+
+  ue2:
+    container_name: ue2
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue2.ueransim.org
+    configs:
+      - source: ue2_config
+        target: /UERANSIM/config/ue.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb1
+
+  ue3:
+    container_name: ue3
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue3.ueransim.org
+    configs:
+      - source: ue3_config
+        target: /UERANSIM/config/ue.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb1
+
+  ue4:
+    container_name: ue4
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue4.ueransim.org
+    configs:
+      - source: ue4_config
+        target: /UERANSIM/config/ue.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb1
+
+  ue5:
+    container_name: ue5
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue5.ueransim.org
+    configs:
+      - source: ue5_config
+        target: /UERANSIM/config/ue.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb1
+
+   
+  ue6:
+    container_name: ue6
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue6.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue6.ueransim.org
+    configs:
+      - source: ue6_config
+        target: /UERANSIM/config/ue6.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb3
+      
+  ue7:
+    container_name: ue7
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue7.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue7.ueransim.org
+    configs:
+      - source: ue7_config
+        target: /UERANSIM/config/ue7.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb4
+      
+  ue8:
+    container_name: ue8
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue8.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue8.ueransim.org
+    configs:
+      - source: ue8_config
+        target: /UERANSIM/config/ue8.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb4
+      
+  ue9:
+    container_name: ue9
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue9.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue9.ueransim.org
+    configs:
+      - source: ue9_config
+        target: /UERANSIM/config/ue9.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb4
+      
+  ue10:
+    container_name: ue10
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue10.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue10.ueransim.org
+    configs:
+      - source: ue10_config
+        target: /UERANSIM/config/ue10.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb5
+
+      
+  ue11:
+    container_name: ue11
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue11.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue11.ueransim.org
+    configs:
+      - source: ue11_config
+        target: /UERANSIM/config/ue11.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb5
+      
+  ue12:
+    container_name: ue12
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue12.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue12.ueransim.org
+    configs:
+      - source: ue12_config
+        target: /UERANSIM/config/ue12.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb5
+
+  ue13:
+    container_name: ue13
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue13.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue13.ueransim.org
+    configs:
+      - source: ue13_config
+        target: /UERANSIM/config/ue13.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb4
+
+  ue14:
+    container_name: ue14
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue14.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue14.ueransim.org
+    configs:
+      - source: ue14_config
+        target: /UERANSIM/config/ue14.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb4
+
+  ue15:
+    container_name: ue15
+    image: "ghcr.io/borjis131/ue:v3.2.6"
+    command: "-c /UERANSIM/config/ue15.yaml"
+    networks:
+      open5gs:
+        aliases:
+          - ue15.ueransim.org
+    configs:
+      - source: ue15_config
+        target: /UERANSIM/config/ue15.yaml
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - gnb4
+
+  prometheus:
+    container_name: prometheus
+    image: "prom/prometheus:v2.51.0"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      open5gs:
+        aliases:
+          - metrics.prometheus.org
+    volumes:
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/alert.rules.yml:/etc/prometheus/alert.rules.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "0.0.0.0:9090:9090/tcp"
+    depends_on:
+      - amf1
+      - pcf
+      - smf1
+      - upf1
+      - gnb1
+      - cadvisor
+    
+  packetrusher:
+    container_name: packetrusher
+    image: "ghcr.io/borjis131/packetrusher:main"
+    command: "--config /PacketRusher/config/packetrusher.yaml ue"
+    restart: unless-stopped
+    networks:
+      open5gs:
+        aliases:
+          - gnb.packetrusher.org
+    configs:
+      - source: packetrusher_config
+        target: /PacketRusher/config/packetrusher.yaml
+    privileged: true
+    cap_add:
+      - ALL
+    depends_on:
+      - amf1
+
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    networks:
+      - open5gs
+    ports:
+    - 8080:8080
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+    depends_on:
+    - redis
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+    - 6379:6379
+
+
+  grafana:
+    container_name: grafana
+    image: "grafana/grafana-oss:10.4.0"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      open5gs:
+        aliases:
+          - dashboard.grafana.org
+    configs:
+      - source: grafana_datasource
+        target: /etc/grafana/provisioning/datasources/open5gs_prometheus.yaml
+      - source: grafana_dashboard_provider
+        target: /etc/grafana/provisioning/dashboards/open5gs_metrics.yaml
+    volumes:
+      - ../../configs/slicing-upf_smf_ues/grafana/dashboards:/var/lib/grafana/dashboards
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    ports:
+      - "0.0.0.0:3000:3000/tcp"
+    depends_on:
+      - prometheus
+
+  webui:
+    container_name: webui
+    image: "webui:${OPEN5GS_VERSION}"
+    deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    restart: always
+    environment:
+      - DB_URI=mongodb://db.open5gs.org/open5gs
+      - PORT=9999
+      - HOSTNAME=0.0.0.0
+      - NODE_ENV=dev
+      - COMPOSE_PROJECT_NAME=slicing-upf_smf_ues
+    command: "run dev"
+    networks:
+      open5gs:
+        aliases:
+          - webui.open5gs.org
+    ports:
+      - "0.0.0.0:9999:9999/tcp"
+    depends_on:
+    - prometheus
+
+  alertmanager:
+   container_name: alertmanager
+   image: prom/alertmanager:v0.25.0
+   deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+   networks:
+    open5gs:
+      aliases:
+        - alertmanager.open5gs.org
+   volumes:
+    - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/:/etc/alertmanager
+   ports:
+    - "0.0.0.0:9093:9093/tcp"
+   depends_on:
+      - prometheus
+      - webhook
+
+  webhook:
+   container_name: webhook
+   image: metrics-webhook  # Use pre-built image
+   build:
+      context: ../../images/webhook_listener
+   networks:
+    open5gs:
+      aliases:
+        - webhook_listener.open5gs.org
+   volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/Scaling.yaml:/app/Scaling.yaml
+    - /Users/zakaahmedchishti/Downloads/docker-open5gs-main/configs/slicing-upf_smf_ues/.env:/app/.env
+   deploy:
+      mode: replicated
+      replicas: 1  # Initial replicas
+   environment:
+    - COMPOSE_PROJECT_NAME=slicing-upf_smf_ues
+   depends_on:
+    - prometheus
+   ports:
+    - "0.0.0.0:5001:5001/tcp"
+   
+  iperf:
+    container_name: iperf
+    image: "mlabbe/iperf3:latest"
+    networks:
+      open5gs:
+        aliases:
+          - test.iperf.org
+
+networks:
+  open5gs:
+    name: open5gs
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-ogs
+    ipam:
+      config:
+        - subnet: 10.33.33.0/24
+
+volumes:
+  db_data:
+    name: open5gs_db_data
+    external: true
+  db_config:
+    name: open5gs_db_config
+    external: true
+  prometheus_data:
+    name: open5gs_prometheus_data
+
+configs:
+  nrf_config:
+    file: ../../configs/slicing-upf_smf_ues/nrf.yaml
+  ausf_config:
+    file: ../../configs/slicing-upf_smf_ues/ausf.yaml
+  udm_config:
+    file: ../../configs/slicing-upf_smf_ues/udm.yaml
+  udr_config:
+    file: ../../configs/slicing-upf_smf_ues/udr.yaml
+  nssf_config:
+    file: ../../configs/slicing-upf_smf_ues/nssf.yaml
+  bsf_config:
+    file: ../../configs/slicing-upf_smf_ues/bsf.yaml
+  pcf_config:
+    file: ../../configs/slicing-upf_smf_ues/pcf.yaml
+  smf1_config:
+    file: ../../configs/slicing-upf_smf_ues/smf1.yaml
+  smf2_config:
+    file: ../../configs/slicing-upf_smf_ues/smf2.yaml
+  smf3_config:
+    file: ../../configs/slicing-upf_smf_ues/smf3.yaml
+  smf4_config:
+    file: ../../configs/slicing-upf_smf_ues/smf4.yaml
+  upf1_config:
+    file: ../../configs/slicing-upf_smf_ues/upf1.yaml
+  upf2_config:
+    file: ../../configs/slicing-upf_smf_ues/upf2.yaml
+  upf3_config:
+    file: ../../configs/slicing-upf_smf_ues/upf3.yaml
+  upf4_config:
+    file: ../../configs/slicing-upf_smf_ues/upf4.yaml
+  amf1_config:
+    file: ../../configs/slicing-upf_smf_ues/amf1.yaml
+  amf2_config:
+    file: ../../configs/slicing-upf_smf_ues/amf2.yaml
+  amf3_config:
+    file: ../../configs/slicing-upf_smf_ues/amf3.yaml
+  gnb1_config:
+    file: ../../configs/slicing-upf_smf_ues/gnb1.yaml
+  gnb2_config:
+    file: ../../configs/slicing-upf_smf_ues/gnb2.yaml
+  gnb3_config:
+    file: ../../configs/slicing-upf_smf_ues/gnb3.yaml
+  gnb4_config:
+    file: ../../configs/slicing-upf_smf_ues/gnb4.yaml
+  gnb5_config:
+    file: ../../configs/slicing-upf_smf_ues/gnb5.yaml
+  ue1_config:
+    file: ../../configs/slicing-upf_smf_ues/ue1.yaml
+  ue2_config:
+    file: ../../configs/slicing-upf_smf_ues/ue2.yaml
+  ue3_config:
+    file: ../../configs/slicing-upf_smf_ues/ue3.yaml
+  ue4_config:
+    file: ../../configs/slicing-upf_smf_ues/ue4.yaml
+  ue5_config:
+    file: ../../configs/slicing-upf_smf_ues/ue5.yaml
+  ue6_config:
+    file: ../../configs/slicing-upf_smf_ues/ue6.yaml
+  ue7_config:
+    file: ../../configs/slicing-upf_smf_ues/ue7.yaml
+  ue8_config:
+    file: ../../configs/slicing-upf_smf_ues/ue8.yaml
+  ue9_config:
+    file: ../../configs/slicing-upf_smf_ues/ue9.yaml
+  ue10_config:
+    file: ../../configs/slicing-upf_smf_ues/ue10.yaml
+  ue11_config:
+    file: ../../configs/slicing-upf_smf_ues/ue11.yaml
+  ue12_config:
+    file: ../../configs/slicing-upf_smf_ues/ue12.yaml
+  ue13_config:
+    file: ../../configs/slicing-upf_smf_ues/ue13.yaml
+  ue14_config:
+    file: ../../configs/slicing-upf_smf_ues/ue14.yaml
+  ue15_config:
+    file: ../../configs/slicing-upf_smf_ues/ue15.yaml
+  prometheus_config:
+    file: ../../configs/slicing-upf_smf_ues/prometheus.yml
+  grafana_datasource:
+    file: ../../configs/slicing-upf_smf_ues/grafana/datasource.yaml
+  grafana_dashboard_provider:
+    file: ../../configs/slicing-upf_smf_ues/grafana/dashboard_provider.yaml
+  packetrusher_config:
+    file: ../../configs/slicing-upf_smf_ues/packetrusher.yaml
