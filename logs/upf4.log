@@ -1,0 +1,615 @@
+Open5GS daemon v2.7.2
+
+02/27 09:50:35.494: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:50:35.495: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 09:50:35.699: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:50:35.700: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 09:50:35.726: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:50:35.727: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 09:50:36.056: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:50:36.057: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 09:50:36.270: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:50:36.274: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:50:36.276: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff8c1449d4]
+open5gs-upfd(+0x66c4) [0xaaaae37c66c4]
+open5gs-upfd(+0x5ba4) [0xaaaae37c5ba4]
+open5gs-upfd(+0x6520) [0xaaaae37c6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff8bc473fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff8bc474cc]
+open5gs-upfd(+0x5ab0) [0xaaaae37c5ab0]
+02/27 09:50:36.550: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:50:36.565: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:50:36.570: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffa89849d4]
+open5gs-upfd(+0x66c4) [0xaaaac9f966c4]
+open5gs-upfd(+0x5ba4) [0xaaaac9f95ba4]
+open5gs-upfd(+0x6520) [0xaaaac9f96520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffa84773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffa84774cc]
+open5gs-upfd(+0x5ab0) [0xaaaac9f95ab0]
+Open5GS daemon v2.7.2
+
+02/27 09:50:36.838: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:50:36.838: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 09:50:37.002: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:50:37.004: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:50:37.013: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff941649d4]
+open5gs-upfd(+0x66c4) [0xaaaae69266c4]
+open5gs-upfd(+0x5ba4) [0xaaaae6925ba4]
+open5gs-upfd(+0x6520) [0xaaaae6926520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff93c773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff93c774cc]
+open5gs-upfd(+0x5ab0) [0xaaaae6925ab0]
+02/27 09:50:39.818: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:50:39.820: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:50:39.821: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff92ae49d4]
+open5gs-upfd(+0x66c4) [0xaaaacc3466c4]
+open5gs-upfd(+0x5ba4) [0xaaaacc345ba4]
+open5gs-upfd(+0x6520) [0xaaaacc346520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff924773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff924774cc]
+open5gs-upfd(+0x5ab0) [0xaaaacc345ab0]
+02/27 09:50:40.730: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:50:40.730: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:50:40.731: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff8c6549d4]
+open5gs-upfd(+0x66c4) [0xaaaae0d766c4]
+open5gs-upfd(+0x5ba4) [0xaaaae0d75ba4]
+open5gs-upfd(+0x6520) [0xaaaae0d76520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff8c0773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff8c0774cc]
+open5gs-upfd(+0x5ab0) [0xaaaae0d75ab0]
+Open5GS daemon v2.7.2
+
+02/27 09:55:34.576: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+Open5GS daemon v2.7.2
+
+02/27 09:55:34.577: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 09:55:34.585: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+Open5GS daemon v2.7.2
+
+02/27 09:55:34.604: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 09:55:34.604: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:55:34.635: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 09:55:34.641: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:55:34.642: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 09:55:34.715: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:55:34.717: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 09:55:34.966: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:55:34.966: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:55:34.966: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff9ee849d4]
+open5gs-upfd(+0x66c4) [0xaaaae92d66c4]
+open5gs-upfd(+0x5ba4) [0xaaaae92d5ba4]
+open5gs-upfd(+0x6520) [0xaaaae92d6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff9e8773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff9e8774cc]
+open5gs-upfd(+0x5ab0) [0xaaaae92d5ab0]
+02/27 09:55:35.003: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:55:35.010: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:55:35.010: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffb21749d4]
+open5gs-upfd(+0x66c4) [0xaaaae65f66c4]
+open5gs-upfd(+0x5ba4) [0xaaaae65f5ba4]
+open5gs-upfd(+0x6520) [0xaaaae65f6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffb1c773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffb1c774cc]
+open5gs-upfd(+0x5ab0) [0xaaaae65f5ab0]
+02/27 09:55:38.993: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:55:38.993: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:55:38.994: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff9b1a49d4]
+open5gs-upfd(+0x66c4) [0xaaaad33a66c4]
+open5gs-upfd(+0x5ba4) [0xaaaad33a5ba4]
+open5gs-upfd(+0x6520) [0xaaaad33a6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff9ac773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff9ac774cc]
+open5gs-upfd(+0x5ab0) [0xaaaad33a5ab0]
+02/27 09:55:39.145: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:55:39.149: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:55:39.149: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff99a049d4]
+open5gs-upfd(+0x66c4) [0xaaaab77566c4]
+open5gs-upfd(+0x5ba4) [0xaaaab7755ba4]
+open5gs-upfd(+0x6520) [0xaaaab7756520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff994773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff994774cc]
+open5gs-upfd(+0x5ab0) [0xaaaab7755ab0]
+02/27 09:55:39.263: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:55:39.265: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:55:39.266: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffaae449d4]
+open5gs-upfd(+0x66c4) [0xaaaab2c966c4]
+open5gs-upfd(+0x5ba4) [0xaaaab2c95ba4]
+open5gs-upfd(+0x6520) [0xaaaab2c96520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffaa8773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffaa8774cc]
+open5gs-upfd(+0x5ab0) [0xaaaab2c95ab0]
+Open5GS daemon v2.7.2
+
+02/27 09:59:32.837: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:59:32.838: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 09:59:33.217: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:59:33.228: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:59:33.246: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff8c8249d4]
+open5gs-upfd(+0x66c4) [0xaaaab26066c4]
+open5gs-upfd(+0x5ba4) [0xaaaab2605ba4]
+open5gs-upfd(+0x6520) [0xaaaab2606520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff8c2773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff8c2774cc]
+open5gs-upfd(+0x5ab0) [0xaaaab2605ab0]
+Open5GS daemon v2.7.2
+
+02/27 09:59:33.276: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:59:33.276: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 09:59:33.353: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:59:33.364: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 09:59:33.369: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 09:59:33.369: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 09:59:33.609: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:59:33.609: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:59:33.610: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffb0b449d4]
+open5gs-upfd(+0x66c4) [0xaaaad74266c4]
+open5gs-upfd(+0x5ba4) [0xaaaad7425ba4]
+open5gs-upfd(+0x6520) [0xaaaad7426520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffb06473fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffb06474cc]
+open5gs-upfd(+0x5ab0) [0xaaaad7425ab0]
+02/27 09:59:37.388: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:59:37.388: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:59:37.389: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffab8949d4]
+open5gs-upfd(+0x66c4) [0xaaaab8d666c4]
+open5gs-upfd(+0x5ba4) [0xaaaab8d65ba4]
+open5gs-upfd(+0x6520) [0xaaaab8d66520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffab2773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffab2774cc]
+open5gs-upfd(+0x5ab0) [0xaaaab8d65ab0]
+02/27 09:59:37.657: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 09:59:37.670: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 09:59:37.670: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff7fca49d4]
+open5gs-upfd(+0x66c4) [0xaaaacc7066c4]
+open5gs-upfd(+0x5ba4) [0xaaaacc705ba4]
+open5gs-upfd(+0x6520) [0xaaaacc706520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff7f6773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff7f6774cc]
+open5gs-upfd(+0x5ab0) [0xaaaacc705ab0]
+Open5GS daemon v2.7.2
+
+Open5GS daemon v2.7.2
+
+02/27 11:47:58.797: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:47:58.797: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:47:58.797: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 11:47:58.797: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 11:47:59.751: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:47:59.751: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 11:48:00.387: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:48:00.389: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 11:48:00.407: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:48:00.414: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:48:00.424: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffa5bc49d4]
+open5gs-upfd(+0x66c4) [0xaaaabc7b66c4]
+open5gs-upfd(+0x5ba4) [0xaaaabc7b5ba4]
+open5gs-upfd(+0x6520) [0xaaaabc7b6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffa56773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffa56774cc]
+open5gs-upfd(+0x5ab0) [0xaaaabc7b5ab0]
+Open5GS daemon v2.7.2
+
+02/27 11:48:01.052: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:48:01.052: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 11:48:01.317: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:48:01.318: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:48:01.318: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff9b5249d4]
+open5gs-upfd(+0x66c4) [0xaaaab5da66c4]
+open5gs-upfd(+0x5ba4) [0xaaaab5da5ba4]
+open5gs-upfd(+0x6520) [0xaaaab5da6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff9b2673fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff9b2674cc]
+open5gs-upfd(+0x5ab0) [0xaaaab5da5ab0]
+Open5GS daemon v2.7.2
+
+02/27 11:48:01.528: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:48:01.538: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 11:48:01.689: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:48:01.689: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:48:01.690: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffb1dc49d4]
+open5gs-upfd(+0x66c4) [0xaaaabd9f66c4]
+open5gs-upfd(+0x5ba4) [0xaaaabd9f5ba4]
+open5gs-upfd(+0x6520) [0xaaaabd9f6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffb18773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffb18774cc]
+open5gs-upfd(+0x5ab0) [0xaaaabd9f5ab0]
+02/27 11:48:03.436: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:48:03.437: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:48:03.443: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff888c49d4]
+open5gs-upfd(+0x66c4) [0xaaaac46566c4]
+open5gs-upfd(+0x5ba4) [0xaaaac4655ba4]
+open5gs-upfd(+0x6520) [0xaaaac4656520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff882773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff882774cc]
+open5gs-upfd(+0x5ab0) [0xaaaac4655ab0]
+02/27 11:48:04.685: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:48:04.689: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:48:04.690: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffa71249d4]
+open5gs-upfd(+0x66c4) [0xaaaada7766c4]
+open5gs-upfd(+0x5ba4) [0xaaaada775ba4]
+open5gs-upfd(+0x6520) [0xaaaada776520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffa6e673fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffa6e674cc]
+open5gs-upfd(+0x5ab0) [0xaaaada775ab0]
+02/27 11:48:09.131: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:48:09.132: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:48:09.133: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff944349d4]
+open5gs-upfd(+0x66c4) [0xaaaac9b366c4]
+open5gs-upfd(+0x5ba4) [0xaaaac9b35ba4]
+open5gs-upfd(+0x6520) [0xaaaac9b36520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff93e773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff93e774cc]
+open5gs-upfd(+0x5ab0) [0xaaaac9b35ab0]
+Open5GS daemon v2.7.2
+
+02/27 11:49:09.890: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:49:09.890: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 11:49:10.410: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:49:10.412: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 11:49:11.210: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:49:11.210: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 11:49:11.464: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:49:11.468: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:49:11.468: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff97b149d4]
+open5gs-upfd(+0x66c4) [0xaaaadbf166c4]
+open5gs-upfd(+0x5ba4) [0xaaaadbf15ba4]
+open5gs-upfd(+0x6520) [0xaaaadbf16520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff974773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff974774cc]
+open5gs-upfd(+0x5ab0) [0xaaaadbf15ab0]
+Open5GS daemon v2.7.2
+
+02/27 11:49:11.923: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:49:11.923: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+Open5GS daemon v2.7.2
+
+02/27 11:49:12.471: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:49:12.471: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 11:49:12.725: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:49:12.728: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:49:12.729: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff92ed49d4]
+open5gs-upfd(+0x66c4) [0xaaaaaacc66c4]
+open5gs-upfd(+0x5ba4) [0xaaaaaacc5ba4]
+open5gs-upfd(+0x6520) [0xaaaaaacc6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff928773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff928774cc]
+open5gs-upfd(+0x5ab0) [0xaaaaaacc5ab0]
+Open5GS daemon v2.7.2
+
+02/27 11:49:13.381: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 11:49:13.381: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 11:49:14.133: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:49:14.133: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:49:14.134: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff81e049d4]
+open5gs-upfd(+0x66c4) [0xaaaadcb466c4]
+open5gs-upfd(+0x5ba4) [0xaaaadcb45ba4]
+open5gs-upfd(+0x6520) [0xaaaadcb46520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff818773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff818774cc]
+open5gs-upfd(+0x5ab0) [0xaaaadcb45ab0]
+02/27 11:49:14.653: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:49:14.671: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:49:14.671: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffac9a49d4]
+open5gs-upfd(+0x66c4) [0xaaaadf8166c4]
+open5gs-upfd(+0x5ba4) [0xaaaadf815ba4]
+open5gs-upfd(+0x6520) [0xaaaadf816520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffac4773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffac4774cc]
+open5gs-upfd(+0x5ab0) [0xaaaadf815ab0]
+02/27 11:49:16.605: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:49:16.607: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:49:16.607: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff9a0e49d4]
+open5gs-upfd(+0x66c4) [0xaaaab8fa66c4]
+open5gs-upfd(+0x5ba4) [0xaaaab8fa5ba4]
+open5gs-upfd(+0x6520) [0xaaaab8fa6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff99a773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff99a774cc]
+open5gs-upfd(+0x5ab0) [0xaaaab8fa5ab0]
+02/27 11:49:17.599: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 11:49:17.603: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 11:49:17.617: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffb5ca49d4]
+open5gs-upfd(+0x66c4) [0xaaaacdce66c4]
+open5gs-upfd(+0x5ba4) [0xaaaacdce5ba4]
+open5gs-upfd(+0x6520) [0xaaaacdce6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffb56773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffb56774cc]
+open5gs-upfd(+0x5ab0) [0xaaaacdce5ab0]
+Open5GS daemon v2.7.2
+
+02/27 12:27:51.699: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 12:27:51.704: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 12:27:55.930: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 12:27:55.933: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 12:27:55.934: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff87de49d4]
+open5gs-upfd(+0x66c4) [0xaaaab36e66c4]
+open5gs-upfd(+0x5ba4) [0xaaaab36e5ba4]
+open5gs-upfd(+0x6520) [0xaaaab36e6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff878773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff878774cc]
+open5gs-upfd(+0x5ab0) [0xaaaab36e5ab0]
+Open5GS daemon v2.7.2
+
+02/27 13:21:46.912: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 13:21:46.919: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 13:21:47.220: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 13:21:47.220: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 13:21:47.221: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffa37d49d4]
+open5gs-upfd(+0x66c4) [0xaaaaafcf66c4]
+open5gs-upfd(+0x5ba4) [0xaaaaafcf5ba4]
+open5gs-upfd(+0x6520) [0xaaaaafcf6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffa32773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffa32774cc]
+open5gs-upfd(+0x5ab0) [0xaaaaafcf5ab0]
+Open5GS daemon v2.7.2
+
+02/27 13:21:52.178: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 13:21:52.178: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 13:21:57.427: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 13:21:57.432: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 13:21:57.433: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff908649d4]
+open5gs-upfd(+0x66c4) [0xaaaae89e66c4]
+open5gs-upfd(+0x5ba4) [0xaaaae89e5ba4]
+open5gs-upfd(+0x6520) [0xaaaae89e6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff902773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff902774cc]
+open5gs-upfd(+0x5ab0) [0xaaaae89e5ab0]
+Open5GS daemon v2.7.2
+
+02/27 14:06:01.172: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 14:06:01.172: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 14:06:01.412: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 14:06:01.415: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 14:06:01.433: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffb7e249d4]
+open5gs-upfd(+0x66c4) [0xaaaae77f66c4]
+open5gs-upfd(+0x5ba4) [0xaaaae77f5ba4]
+open5gs-upfd(+0x6520) [0xaaaae77f6520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffb78773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffb78774cc]
+open5gs-upfd(+0x5ab0) [0xaaaae77f5ab0]
+Open5GS daemon v2.7.2
+
+02/27 14:06:07.289: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 14:06:07.290: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 14:06:11.534: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 14:06:11.534: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 14:06:11.535: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffbf0749d4]
+open5gs-upfd(+0x66c4) [0xaaaadd4166c4]
+open5gs-upfd(+0x5ba4) [0xaaaadd415ba4]
+open5gs-upfd(+0x6520) [0xaaaadd416520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffbea773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffbea774cc]
+open5gs-upfd(+0x5ab0) [0xaaaadd415ab0]
+Open5GS daemon v2.7.2
+
+02/27 14:06:15.041: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 14:06:15.041: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 14:06:19.294: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 14:06:19.310: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 14:06:19.313: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffff89ba49d4]
+open5gs-upfd(+0x66c4) [0xaaaadf9066c4]
+open5gs-upfd(+0x5ba4) [0xaaaadf905ba4]
+open5gs-upfd(+0x6520) [0xaaaadf906520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffff896773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffff896774cc]
+open5gs-upfd(+0x5ab0) [0xaaaadf905ab0]
+Open5GS daemon v2.7.2
+
+02/27 15:05:17.091: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 15:05:17.091: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 15:05:17.245: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 15:05:17.245: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 15:05:17.249: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffae1e49d4]
+open5gs-upfd(+0x66c4) [0xaaaaddd866c4]
+open5gs-upfd(+0x5ba4) [0xaaaaddd85ba4]
+open5gs-upfd(+0x6520) [0xaaaaddd86520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffadc773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffadc774cc]
+open5gs-upfd(+0x5ab0) [0xaaaaddd85ab0]
+Open5GS daemon v2.7.2
+
+02/27 15:12:41.303: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 15:12:41.303: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 15:12:41.480: [sock] ERROR: getaddrinfo(0:upf4.open5gs.org:2152:0x0) failed (2:No such file or directory) (../lib/core/ogs-sockaddr.c:116)
+02/27 15:12:41.480: [gtp] FATAL: ogs_gtp_context_parse_config: Assertion `rv == OGS_OK' failed. (../lib/gtp/context.c:411)
+02/27 15:12:41.481: [core] FATAL: backtrace() returned 8 addresses (../lib/core/ogs-abort.c:37)
+/usr/local/lib/libogsgtp.so.2(ogs_gtp_context_parse_config+0x1324) [0xffffbe2349d4]
+open5gs-upfd(+0x66c4) [0xaaaae2f066c4]
+open5gs-upfd(+0x5ba4) [0xaaaae2f05ba4]
+open5gs-upfd(+0x6520) [0xaaaae2f06520]
+/lib/aarch64-linux-gnu/libc.so.6(+0x273fc) [0xffffbdc773fc]
+/lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0x98) [0xffffbdc774cc]
+open5gs-upfd(+0x5ab0) [0xaaaae2f05ab0]
+Open5GS daemon v2.7.2
+
+02/27 15:30:37.048: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 15:30:37.049: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 15:30:37.164: [metrics] ERROR: Cannot start Prometheus HTTP server (../lib/metrics/prometheus/context.c:282)
+02/27 15:30:37.164: [sock] ERROR: socket bind(2) [10.33.33.5]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-socket.c:114)
+02/27 15:30:37.164: [sock] ERROR: udp_server() [10.33.33.5]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-udp.c:67)
+02/27 15:30:37.164: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+02/27 15:30:37.164: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+Open5GS daemon v2.7.2
+
+02/27 15:39:38.187: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 15:39:38.188: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 15:39:38.286: [metrics] ERROR: Cannot start Prometheus HTTP server (../lib/metrics/prometheus/context.c:282)
+02/27 15:39:38.293: [sock] ERROR: socket bind(2) [10.33.33.2]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-socket.c:114)
+02/27 15:39:38.295: [sock] ERROR: udp_server() [10.33.33.2]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-udp.c:67)
+02/27 15:39:38.296: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+02/27 15:39:38.302: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+Open5GS daemon v2.7.2
+
+02/27 15:51:39.761: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 15:51:39.762: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 15:51:39.864: [metrics] ERROR: Cannot start Prometheus HTTP server (../lib/metrics/prometheus/context.c:282)
+02/27 15:51:39.864: [sock] ERROR: socket bind(2) [10.33.33.2]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-socket.c:114)
+02/27 15:51:39.864: [sock] ERROR: udp_server() [10.33.33.2]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-udp.c:67)
+02/27 15:51:39.864: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+02/27 15:51:39.864: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+Open5GS daemon v2.7.2
+
+02/27 15:55:49.520: [app] INFO: Configuration: '/etc/open5gs/custom/upf.yaml' (../lib/app/ogs-init.c:133)
+02/27 15:55:49.520: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+02/27 15:55:49.659: [metrics] ERROR: Cannot start Prometheus HTTP server (../lib/metrics/prometheus/context.c:282)
+02/27 15:55:49.660: [sock] ERROR: socket bind(2) [10.33.33.3]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-socket.c:114)
+02/27 15:55:49.660: [sock] ERROR: udp_server() [10.33.33.3]:8805 failed (99:Cannot assign requested address) (../lib/core/ogs-udp.c:67)
+02/27 15:55:49.661: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+02/27 15:55:49.662: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+Open5GS daemon v2.7.2
+
+03/01 12:09:11.392: [app] INFO: Configuration: '/etc/open5gs/custom/upf4.yaml' (../lib/app/ogs-init.c:133)
+03/01 12:09:11.392: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+03/01 12:09:11.530: [metrics] INFO: metrics_server() [http://upf4.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+03/01 12:09:11.530: [pfcp] INFO: pfcp_server() [10.33.33.2]:8805 (../lib/pfcp/path.c:30)
+03/01 12:09:11.530: [gtp] INFO: gtp_server() [10.33.33.2]:2152 (../lib/gtp/path.c:30)
+03/01 12:09:11.531: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+03/01 12:09:14.632: [pfcp] INFO: ogs_pfcp_connect() [10.33.33.13]:8805 (../lib/pfcp/path.c:61)
+03/01 12:09:14.639: [upf] INFO: PFCP associated [10.33.33.13]:8805 (../src/upf/pfcp-sm.c:184)
+03/01 12:09:39.421: [upf] INFO: [Added] Number of UPF-Sessions is now 1 (../src/upf/context.c:207)
+03/01 12:09:39.422: [gtp] INFO: gtp_connect() [10.33.33.13]:2152 (../lib/gtp/path.c:60)
+03/01 12:09:39.422: [upf] INFO: UE F-SEID[UP:0x71c CP:0x3d4] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:09:39.423: [upf] INFO: UE F-SEID[UP:0x71c CP:0x3d4] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:09:39.438: [gtp] INFO: gtp_connect() [10.33.33.23]:2152 (../lib/gtp/path.c:60)
+03/01 12:09:39.658: [upf] INFO: [Added] Number of UPF-Sessions is now 2 (../src/upf/context.c:207)
+03/01 12:09:39.659: [upf] INFO: UE F-SEID[UP:0x284 CP:0x8ec] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:09:39.659: [upf] INFO: UE F-SEID[UP:0x284 CP:0x8ec] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:09:40.206: [upf] INFO: [Added] Number of UPF-Sessions is now 3 (../src/upf/context.c:207)
+03/01 12:09:40.206: [upf] INFO: UE F-SEID[UP:0x559 CP:0xf3e] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+03/01 12:09:40.206: [upf] INFO: UE F-SEID[UP:0x559 CP:0xf3e] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+Open5GS daemon v2.7.2
+
+03/01 12:13:18.571: [app] INFO: Configuration: '/etc/open5gs/custom/upf4.yaml' (../lib/app/ogs-init.c:133)
+03/01 12:13:18.572: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+03/01 12:13:18.634: [metrics] INFO: metrics_server() [http://upf4.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+03/01 12:13:18.636: [pfcp] INFO: pfcp_server() [10.33.33.3]:8805 (../lib/pfcp/path.c:30)
+03/01 12:13:18.637: [gtp] INFO: gtp_server() [10.33.33.3]:2152 (../lib/gtp/path.c:30)
+03/01 12:13:18.643: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+03/01 12:13:21.290: [pfcp] INFO: ogs_pfcp_connect() [10.33.33.20]:8805 (../lib/pfcp/path.c:61)
+03/01 12:13:21.291: [upf] INFO: PFCP associated [10.33.33.20]:8805 (../src/upf/pfcp-sm.c:184)
+03/01 12:13:29.423: [upf] INFO: [Added] Number of UPF-Sessions is now 1 (../src/upf/context.c:207)
+03/01 12:13:29.425: [gtp] INFO: gtp_connect() [10.33.33.20]:2152 (../lib/gtp/path.c:60)
+03/01 12:13:29.426: [upf] INFO: UE F-SEID[UP:0x717 CP:0x74a] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:13:29.426: [upf] INFO: UE F-SEID[UP:0x717 CP:0x74a] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:13:29.471: [gtp] INFO: gtp_connect() [10.33.33.28]:2152 (../lib/gtp/path.c:60)
+03/01 12:13:46.774: [upf] INFO: [Added] Number of UPF-Sessions is now 2 (../src/upf/context.c:207)
+03/01 12:13:46.776: [upf] INFO: UE F-SEID[UP:0x670 CP:0x744] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:13:46.778: [upf] INFO: UE F-SEID[UP:0x670 CP:0x744] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:13:47.550: [upf] INFO: [Added] Number of UPF-Sessions is now 3 (../src/upf/context.c:207)
+03/01 12:13:47.551: [upf] INFO: UE F-SEID[UP:0xe3b CP:0xbf9] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+03/01 12:13:47.551: [upf] INFO: UE F-SEID[UP:0xe3b CP:0xbf9] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+03/01 12:16:47.207: [pfcp] WARNING: [19] LOCAL  No Reponse. Give up! for step 1 type 1 peer [10.33.33.20]:8805 (../lib/pfcp/xact.c:619)
+03/01 12:16:47.208: [upf] WARNING: No Heartbeat from SMF [10.33.33.20]:8805 (../src/upf/pfcp-sm.c:325)
+03/01 12:16:47.208: [upf] INFO: PFCP de-associated [10.33.33.20]:8805 (../src/upf/pfcp-sm.c:199)
+Open5GS daemon v2.7.2
+
+03/01 12:17:24.538: [app] INFO: Configuration: '/etc/open5gs/custom/upf4.yaml' (../lib/app/ogs-init.c:133)
+03/01 12:17:24.539: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+03/01 12:17:24.596: [metrics] INFO: metrics_server() [http://upf4.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+03/01 12:17:24.597: [pfcp] INFO: pfcp_server() [10.33.33.6]:8805 (../lib/pfcp/path.c:30)
+03/01 12:17:24.597: [gtp] INFO: gtp_server() [10.33.33.6]:2152 (../lib/gtp/path.c:30)
+03/01 12:17:24.598: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+03/01 12:17:26.625: [pfcp] INFO: ogs_pfcp_connect() [10.33.33.18]:8805 (../lib/pfcp/path.c:61)
+03/01 12:17:26.630: [upf] INFO: PFCP associated [10.33.33.18]:8805 (../src/upf/pfcp-sm.c:184)
+03/01 12:17:53.130: [upf] INFO: [Added] Number of UPF-Sessions is now 1 (../src/upf/context.c:207)
+03/01 12:17:53.132: [gtp] INFO: gtp_connect() [10.33.33.18]:2152 (../lib/gtp/path.c:60)
+03/01 12:17:53.132: [upf] INFO: UE F-SEID[UP:0x6f9 CP:0x1d7] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:17:53.132: [upf] INFO: UE F-SEID[UP:0x6f9 CP:0x1d7] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:17:53.157: [gtp] INFO: gtp_connect() [10.33.33.27]:2152 (../lib/gtp/path.c:60)
+03/01 12:17:53.687: [upf] INFO: [Added] Number of UPF-Sessions is now 2 (../src/upf/context.c:207)
+03/01 12:17:53.688: [upf] INFO: UE F-SEID[UP:0x699 CP:0x482] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:17:53.688: [upf] INFO: UE F-SEID[UP:0x699 CP:0x482] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:17:55.081: [upf] INFO: [Added] Number of UPF-Sessions is now 3 (../src/upf/context.c:207)
+03/01 12:17:55.081: [upf] INFO: UE F-SEID[UP:0xf0 CP:0xfb9] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+03/01 12:17:55.081: [upf] INFO: UE F-SEID[UP:0xf0 CP:0xfb9] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+03/01 12:21:36.395: [pfcp] WARNING: [23] LOCAL  No Reponse. Give up! for step 1 type 1 peer [10.33.33.18]:8805 (../lib/pfcp/xact.c:619)
+03/01 12:21:36.398: [upf] WARNING: No Heartbeat from SMF [10.33.33.18]:8805 (../src/upf/pfcp-sm.c:325)
+03/01 12:21:36.398: [upf] INFO: PFCP de-associated [10.33.33.18]:8805 (../src/upf/pfcp-sm.c:199)
+Open5GS daemon v2.7.2
+
+03/01 12:22:31.053: [app] INFO: Configuration: '/etc/open5gs/custom/upf4.yaml' (../lib/app/ogs-init.c:133)
+03/01 12:22:31.054: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+03/01 12:22:31.237: [metrics] INFO: metrics_server() [http://upf4.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+03/01 12:22:31.241: [pfcp] INFO: pfcp_server() [10.33.33.6]:8805 (../lib/pfcp/path.c:30)
+03/01 12:22:31.241: [gtp] INFO: gtp_server() [10.33.33.6]:2152 (../lib/gtp/path.c:30)
+03/01 12:22:31.243: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+03/01 12:22:33.333: [pfcp] INFO: ogs_pfcp_connect() [10.33.33.14]:8805 (../lib/pfcp/path.c:61)
+03/01 12:22:33.348: [upf] INFO: PFCP associated [10.33.33.14]:8805 (../src/upf/pfcp-sm.c:184)
+03/01 12:23:00.950: [upf] INFO: [Added] Number of UPF-Sessions is now 1 (../src/upf/context.c:207)
+03/01 12:23:00.954: [gtp] INFO: gtp_connect() [10.33.33.14]:2152 (../lib/gtp/path.c:60)
+03/01 12:23:00.954: [upf] INFO: UE F-SEID[UP:0x187 CP:0x379] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:23:00.958: [upf] INFO: UE F-SEID[UP:0x187 CP:0x379] APN[internet] PDN-Type[1] IPv4[10.48.0.2] IPv6[] (../src/upf/context.c:493)
+03/01 12:23:00.988: [gtp] INFO: gtp_connect() [10.33.33.23]:2152 (../lib/gtp/path.c:60)
+03/01 12:23:01.206: [upf] INFO: [Added] Number of UPF-Sessions is now 2 (../src/upf/context.c:207)
+03/01 12:23:01.213: [upf] INFO: UE F-SEID[UP:0xa89 CP:0x48b] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:23:01.213: [upf] INFO: UE F-SEID[UP:0xa89 CP:0x48b] APN[internet] PDN-Type[1] IPv4[10.48.0.3] IPv6[] (../src/upf/context.c:493)
+03/01 12:23:01.445: [upf] INFO: [Added] Number of UPF-Sessions is now 3 (../src/upf/context.c:207)
+03/01 12:23:01.445: [upf] INFO: UE F-SEID[UP:0xd5b CP:0xee0] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+03/01 12:23:01.445: [upf] INFO: UE F-SEID[UP:0xd5b CP:0xee0] APN[internet] PDN-Type[1] IPv4[10.48.0.4] IPv6[] (../src/upf/context.c:493)
+03/01 12:27:49.014: [pfcp] WARNING: [29] LOCAL  No Reponse. Give up! for step 1 type 1 peer [10.33.33.14]:8805 (../lib/pfcp/xact.c:619)
+03/01 12:27:49.016: [upf] WARNING: No Heartbeat from SMF [10.33.33.14]:8805 (../src/upf/pfcp-sm.c:325)
+03/01 12:27:49.016: [upf] INFO: PFCP de-associated [10.33.33.14]:8805 (../src/upf/pfcp-sm.c:199)
+Open5GS daemon v2.7.2
+
+03/01 12:28:24.685: [app] INFO: Configuration: '/etc/open5gs/custom/upf4.yaml' (../lib/app/ogs-init.c:133)
+03/01 12:28:24.685: [app] INFO: File Logging: '/var/log/open5gs/upf4.log' (../lib/app/ogs-init.c:136)
+03/01 12:28:24.899: [metrics] INFO: metrics_server() [http://upf4.open5gs.org]:9090 (../lib/metrics/prometheus/context.c:296)
+03/01 12:28:24.899: [pfcp] INFO: pfcp_server() [10.33.33.5]:8805 (../lib/pfcp/path.c:30)
+03/01 12:28:24.899: [gtp] INFO: gtp_server() [10.33.33.5]:2152 (../lib/gtp/path.c:30)
+03/01 12:28:24.900: [app] INFO: UPF initialize...done (../src/upf/app.c:31)
+03/01 12:28:28.131: [pfcp] INFO: ogs_pfcp_connect() [10.33.33.16]:8805 (../lib/pfcp/path.c:61)
+03/01 12:28:28.136: [upf] INFO: PFCP associated [10.33.33.16]:8805 (../src/upf/pfcp-sm.c:184)
