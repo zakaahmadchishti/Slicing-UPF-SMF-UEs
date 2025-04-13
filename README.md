@@ -878,7 +878,7 @@ In **5G Core (5GC)**, **Network Functions (NFs)** play a central role in providi
 ### 3.1. Topology Design and Slicing Based on Application
 The project implements a 5G Standalone (SA) Core Network with Network Slicing using Open5GS. It consists of multiple logical and physical components orchestrated via Docker to provide flexibility, scalability, and resilience.
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Yatish-Screenshots/Architecture/2.%205G%20Network-3-3-3.drawio.png" width="450"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/10.%20Architecture/5G%20Network-3-3.drawio.png" width="450"/>
 	 <p align="center">Figure 2.1: 5G Network Architecture</p>
 </p>
 
@@ -1046,7 +1046,7 @@ This section will detail step-by-step deployment of the 5G slicing system.
  - Configure necessary environment variables and required permissions.
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Zaka_Screenshoots/1.%20Docker%20build%20%26%20Installation/Docker%20Installated.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/1.%20Docker%20build%20%26%20Installation/Docker%20Installated.png" width="1050"/>
 	 <p align="center">Figure 5.1: Docker Installation </p>
 </p>
    
@@ -1063,7 +1063,7 @@ This section will detail step-by-step deployment of the 5G slicing system.
    docker ps
 
    <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Zaka_Screenshoots/2.%20Containers%20Build%20%26%20Running%20Basic/docker%20desktop%20images%20.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/2.%20Containers%20Build%20%26%20Running%20Basic/docker%20desktop%20images%20.png" width="1050"/>
 	 <p align="center">Figure 5.2: Docker Desktop </p>
 </p>
      
@@ -1096,7 +1096,7 @@ smf2:
 
 
    <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/3cdea129582c1a28a1badecac99e80f6fdfcbe26/Images/Zaka_Screenshoots/31.%20Tying%20to%20Implement%20orchestration/Screenshot%202025-02-01%20at%203.37.35%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/13.%20Single%20smf%20and%20dual%20upf/4.%20Running%20Containers.png" width="1050"/>
 	 <p align="center">Figure 5.3: Multiple NFs </p>
 </p>
      
@@ -1320,8 +1320,8 @@ Webui adding to docker compose:
 
 
    <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Zaka_Screenshoots/WebUI/Screenshot%202025-03-01%20at%201.24.31%E2%80%AFPM.png" width="1050"/>
-	 <p align="center">Figure 5.3: Multiple NFs </p>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/WebUI/Screenshot%202025-03-01%20at%201.24.31%E2%80%AFPM.png" width="1050"/>
+	 <p align="center">Figure 5.3: WebUI </p>
 </p>
 
 
@@ -1488,27 +1488,27 @@ Grafana is used for 'Prometheus' visualizations and real-time monitoring. These 
   
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/cdd2d7e0b481d119b481cd680dbea7075a450636/Images/Zaka_Screenshoots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.56.03%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.56.03%E2%80%AFPM.png" width="1050"/>
 	 <p align="center">Figure 6.8: PCF Dashboard</p>
 </p>
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/cdd2d7e0b481d119b481cd680dbea7075a450636/Images/Zaka_Screenshoots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.56.18%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.56.18%E2%80%AFPM.png" width="1050"/>
 <p align="center">Figure 6.9: UPF Dashboard</p>
 </p>
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/cdd2d7e0b481d119b481cd680dbea7075a450636/Images/Zaka_Screenshoots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.58.04%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.58.04%E2%80%AFPM.png" width="1050"/>
 <p align="center">Figure 6.10: Processor Usage Dashboard</p>
 </p>
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/cdd2d7e0b481d119b481cd680dbea7075a450636/Images/Zaka_Screenshoots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.56.10%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.56.10%E2%80%AFPM.png" width="1050"/>
 <p align="center">Figure 6.11: SMF Dashboard</p>
 </p>
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/cdd2d7e0b481d119b481cd680dbea7075a450636/Images/Zaka_Screenshoots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2011.55.55%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/32.%20Grafana%20Dashboard%20Paremeters%20/Screenshot%202025-02-28%20at%2012.27.43%E2%80%AFAM.png" width="1050"/>
 <p align="center">Figure 6.11: AMF Dashboard</p>
 </p>
 
@@ -1523,7 +1523,7 @@ Database connectivity is mandatory for network-based information such as subscri
 - In the below, we show the presented screenshot of information stored on a database.
   
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Zaka_Screenshoots/16.%20db%20connect%20to%20get%20access%20to%20data/Screenshot%202025-01-12%20at%204.30.41%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/16.%20db%20connect%20to%20get%20access%20to%20data/Screenshot%202025-01-12%20at%204.30.41%E2%80%AFPM.png" width="1050"/>
 	 <p align="center">Figure 6.8: Database Connectivity</p>
 </p>
 
@@ -1540,13 +1540,13 @@ As the important role of Database is that:
 
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/ba0cc16a4b4bc035496227b0eef0b66aac685002/Images/Zaka_Screenshoots/16.%20db%20connect%20to%20get%20access%20to%20data/Screenshot%202025-03-01%20at%201.16.41%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/16.%20db%20connect%20to%20get%20access%20to%20data/Screenshot%202025-03-01%20at%201.16.41%E2%80%AFPM.png" width="1050"/>
 	 <p align="center">Figure 6.8: Current Active Sessions db</p>
 </p>
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/ba0cc16a4b4bc035496227b0eef0b66aac685002/Images/Zaka_Screenshoots/16.%20db%20connect%20to%20get%20access%20to%20data/.Screenshot%202025-03-01%20at%201.17.22%E2%80%AFPM.png" width="1050"/>
-	 <p align="center">Figure 6.8: Subcribers Inforamation</p>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/16.%20db%20connect%20to%20get%20access%20to%20data/.Screenshot%202025-03-01%20at%201.17.22%E2%80%AFPM.png" width="1050"/>
+	 <p align="center">Figure 6.9: Subcribers Inforamation</p>
 </p>
 
 ### 6.4. Creating an Alert Rule
@@ -1598,19 +1598,19 @@ Additionally, a Container Availability Alert (ContainerDown) has been configured
 Here we need to understand the alert we have created now needs to be forwarded to the alert manager. Where we can collect and manage alerts from multiple Prometheus instances in a single place. Supports multiple receivers like email, Slack, PagerDuty, or webhooks, allowing flexible notification methods. As in our case we are using 'webhook'. Before reaching alert to the alert manager, alert has three modes shown below (Active, Pending, Firing): 
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/ba0cc16a4b4bc035496227b0eef0b66aac685002/Images/Zaka_Screenshoots/23.%20Alert%20Firing/Screenshot%202025-03-01%20at%201.21.01%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/23.%20Alert%20Firing/Screenshot%202025-03-01%20at%201.21.01%E2%80%AFPM.png" width="1050"/>
 	 <p align="center">Figure 6.8: Alert in InActive Mode</p>
 </p>
 
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/ba0cc16a4b4bc035496227b0eef0b66aac685002/Images/Zaka_Screenshoots/23.%20Alert%20Firing/Screenshot%202025-03-01%20at%201.21.40%E2%80%AFPM.png"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/23.%20Alert%20Firing/Screenshot%202025-03-01%20at%201.21.40%E2%80%AFPM.png"/>
 	 <p align="center">Figure 6.8: Alert in Pending Mode</p>
 </p>
 
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/ba0cc16a4b4bc035496227b0eef0b66aac685002/Images/Zaka_Screenshoots/23.%20Alert%20Firing/Screenshot%202025-03-01%20at%201.23.48%E2%80%AFPM.png"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/23.%20Alert%20Firing/Screenshot%202025-03-01%20at%201.23.48%E2%80%AFPM.png"/>
 	 <p align="center">Figure 6.8: Alert in Firing Mode</p>
 </p>
 
@@ -1619,14 +1619,14 @@ Now next step is the connectivity of Prometheus with the alert manager. We have 
 
  
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/cdd2d7e0b481d119b481cd680dbea7075a450636/Images/Zaka_Screenshoots/19.%20Alert%20Manager%20with%20Prometheus%20Connected/2.%20Alert%20Manager%20Connected.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/19.%20Alert%20Manager%20with%20Prometheus%20Connected/2.%20Alert%20Manager%20Connected.png" width="1050"/>
 	 <p align="center">Figure 6.8: Connectivity Between Alert Manager and Promotheus</p>
 </p>
 
 The below screenshot shows that after firing an alert alert reached alert manager management. 
  
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/ba0cc16a4b4bc035496227b0eef0b66aac685002/Images/Zaka_Screenshoots/19.%20Alert%20Manager%20with%20Prometheus%20Connected/Screenshot%202025-03-01%20at%201.26.58%E2%80%AFPM.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/19.%20Alert%20Manager%20with%20Prometheus%20Connected/Screenshot%202025-03-01%20at%201.26.58%E2%80%AFPM.png" width="1050"/>
 	 <p align="center">Figure 6.8: Recieved alerts at Alert Manager</p>
 </p>
 
@@ -1801,7 +1801,7 @@ This arrangement facilitates **automating the management of network slicing** an
 
 <p align="center">
   <img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Haris_screenshots/Managemnet%20and%20Orchestration/Management%26Orchestration.png" width="800"/>
-  <p align="center">Figure 6.1: Management and Orchestration Workflow</p>
+  <p align="center">Figure 6.9: Management and Orchestration Workflow</p>
 </p>
 
 
@@ -1832,8 +1832,8 @@ We have attempted to use Docker Swarm for orchestration, given its capabilities 
 
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/ba0cc16a4b4bc035496227b0eef0b66aac685002/Images/Zaka_Screenshoots/17.%20Docker%20Swam/Screenshot%202025-01-19%20at%204.07.18%E2%80%AFPM.png" width="1050"/>
-	 <p align="center">Figure 6.8: Recieved alerts at Alert Manager</p>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/bed01ddfe2bb1ec9752f8d8eb4b95ff388c5491e/Screenshots/17.%20Docker%20Swam/Screenshot%202025-01-19%20at%204.07.18%E2%80%AFPM.png" width="1050"/>
+	 <p align="center">Figure 7.0: Docker Swarm</p>
 </p>
 
 
