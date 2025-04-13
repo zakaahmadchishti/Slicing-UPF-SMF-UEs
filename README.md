@@ -1823,7 +1823,7 @@ This arrangement facilitates **automating the management of network slicing** an
 ### Workflow Diagram
 
 <p align="center">
-  <img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Haris_screenshots/Managemnet%20and%20Orchestration/Management%26Orchestration.png" width="800"/>
+  <img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/07cdff209dbd20a38f871d9731c2c1fe0558c8d4/Screenshots/10.%20Architecture/Management%26Orchestration.png" width="800"/>
   <p align="center">Figure 6.9: Management and Orchestration Workflow</p>
 </p>
 
