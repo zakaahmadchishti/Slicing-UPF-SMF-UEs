@@ -609,13 +609,13 @@ pcf:
 ```
 
 <p align="center">
-<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Screenshots/PCF%20Amber/Screenshot%202025-02-28%20at%2011.36.17%E2%80%AFAM.png" width="450"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Screenshots/PCF%20Amber/Screenshot%202025-02-28%20at%2011.36.17%E2%80%AFAM.png" width="1050"/>
 	 <p align="center">Figure 2.2: 5G PCF Amber</p>
 </p>
 
 
 <p align="center">
-<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Screenshots/PCF%20Amber/Screenshot%202025-02-28%20at%2011.36.33%E2%80%AFAM.png" width="450"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Screenshots/PCF%20Amber/Screenshot%202025-02-28%20at%2011.36.33%E2%80%AFAM.png" width="1050"/>
 	 <p align="center">Figure 2.3: PCF Amber</p>
 </p>
 
@@ -686,7 +686,7 @@ As PCF doesn't allowed our slices 3-000003,4-000001, 4-000002, 4-000003. So, In 
 
 
 <p align="center">
-<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%2012.37.19%E2%80%AFPM.png" width="450"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%2012.37.19%E2%80%AFPM.png" width="1050"/>
 	 <p align="center">Figure 2.4: UE9 PDU Session Rejected</p>
 </p>
 
@@ -770,7 +770,7 @@ Next we will show you the logs of pcf:
 
 
 <p align="center">
-<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%201.14.27%E2%80%AFPM.png" width="450"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%201.14.27%E2%80%AFPM.png" width="1050"/>
 	 <p align="center">Figure 2.5: UE13 </p>
 </p>
 
