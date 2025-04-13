@@ -97,7 +97,7 @@ The 5G Core (5GC) is the foundational infrastructure for fifth-generation networ
 Open5GS is an open-source 5G and 4G LTE core network implementation that allows researchers, developers, and companies to test and deploy 5G networks in a highly customizable environment. Open5GS supports both non-standalone (NSA) and standalone (SA) 5G architecture, making it a preferred platform for private 5G networks, research labs, and testbeds. Open5GS consists of all necessary core network functions and supports simulating User Equipment (UE) and base stations with UERANSIM. The possibility of containerizing Open5GS with Docker and orchestrating with Kubernetes means that scaling can be highly efficient, making Open5GS a preferred platform in 5G scenarios for network slice testing, network automation, as well as 5G network performance assessment.
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Haris_screenshots/Project%20Network%20Architecture/5gcorenetwork.png" width="450"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/66bc6c20c2e3f0bf9eea3a820bdb6ad61d572b80/Screenshots/10.%20Architecture/5gcorenetwork.png" width="450"/>
 	 <p align="center">Figure 2.1: 5G Core Network </p>
 </p>
 
@@ -1008,12 +1008,12 @@ The project was structured into key milestones, each contributing to the success
 ---
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Haris_screenshots/Milistones/Milistone.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/66bc6c20c2e3f0bf9eea3a820bdb6ad61d572b80/Screenshots/10.%20Architecture/Milistone.png" width="1050"/>
 	 <p align="center">Figure 6.9:Milistones</p>
 </p>
 
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/main/Images/Haris_screenshots/Milistones/Issues.png" width="1050"/>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/66bc6c20c2e3f0bf9eea3a820bdb6ad61d572b80/Screenshots/10.%20Architecture/Issues.png" width="1050"/>
 	 <p align="center">Figure 6.9: Issue with an Milistones</p>
 </p>
 
@@ -2040,7 +2040,7 @@ Packetrusher is a high-performance traffic generator and network testing tool th
 - Facilitates evaluation of the network's performance under different conditions.
  
 <p align="center">
-<img src="https://github.com/MobileComputingWiSe24-25/mobcom-team_nyzers/blob/757322fe2455485f795395d61aedc5c69d9da5e8/Images/Yatish-Screenshots/Slicing(4%20sst_with_3%20sd)-AMF(3)_UPF_SMF(4)_UEs(12)/iperf_Throughput_test%20from%20ue11%20and%20ue7%20to%20ue2.png" width="1050"/>
+<img src="" width="1050"/>
 	 <p align="center">Figure 7.4: Throughput Monitoring</p>
 </p>
 
