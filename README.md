@@ -347,7 +347,6 @@ Here is the output logs of 'smf-1':
 ```
 As we have multiple log files present in our project files.
 
-
 #### 2.2.3 UPF (User Plane Function)
 The **UPF** is used as the data plane to handle **user data traffic** between the external data networks and the UE. Core responsibilities:
 
@@ -609,6 +608,18 @@ pcf:
 
 ```
 
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Screenshots/PCF%20Amber/Screenshot%202025-02-28%20at%2011.36.17%E2%80%AFAM.png" width="450"/>
+	 <p align="center">Figure 2.2: 5G PCF Amber</p>
+</p>
+
+
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Screenshots/PCF%20Amber/Screenshot%202025-02-28%20at%2011.36.33%E2%80%AFAM.png" width="450"/>
+	 <p align="center">Figure 2.3: PCF Amber</p>
+</p>
+
+
 As here shown only 8 slices are allowed in PCF. As we have defined more than those slices. So we have seen in the test cases that the other slices weren't able to connect.
 
 
@@ -672,6 +683,14 @@ As here shown only 8 slices are allowed in PCF. As we have defined more than tho
 2025-03-01 23:56:14 [2025-03-01 22:56:14.440] [nas] [error] PDU Session Establishment Reject received [OUT_OF_LADN_SERVICE_AREA]
 ```
 As PCF doesn't allowed our slices 3-000003,4-000001, 4-000002, 4-000003. So, In this we also get a clear confirmation that our slicing and network qos on are working fine. 
+
+
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%2012.37.19%E2%80%AFPM.png" width="450"/>
+	 <p align="center">Figure 2.4: UE9 PDU Session Rejected</p>
+</p>
+
+
 
 Next we will show you the logs of pcf:
 
@@ -750,6 +769,10 @@ Next we will show you the logs of pcf:
 ```
 
 
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%201.14.27%E2%80%AFPM.png" width="450"/>
+	 <p align="center">Figure 2.5: UE13 </p>
+</p>
 
 ### 2.3 Network Slicing in 5G and Open5GS
 Network slicing is one of the most significant features of 5G networks that allows for several virtual networks to operate over a shared physical infrastructure. Every slice represents an individual, end-to-end logical network tailored to specific applications or services. This allows operators to allocate network resources effectively and meet various requirements of different industries, such as IoT, autonomous vehicles, smart cities, and enterprise networks.
@@ -1884,6 +1907,8 @@ In this configuration, the health check ensures that the UPF metrics endpoint (h
 
 
 
+
+
 # 7. Testing Script
 This Portion describes the running network details, our results how we have achieved the goals, and the test we have conducted to evaluate ourselves. 
 
@@ -2021,11 +2046,19 @@ The tests helped ensure that the network slicing configurations were properly is
 
 Here are the testing results of UE's Iperf3. 
 
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%209.37.25%E2%80%AFAM.png" width="1050"/>
+	 <p align="center">Figure 7.5: Throughput Monitoring Iperf3</p>
+</p>
+
 
 ### 7.2. Multiple UEs Registration and PDU Session Establishment
 The logs have been uploaded which show that the multiple creations of PDU sessions and tests are also updated on the project file folder. 
 
-
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%201.29.40%E2%80%AFPM.png" width="1050"/>
+	 <p align="center">Figure 7.4: Multiple PDU Sessions </p>
+</p>
 
 ### 7.3. Network Slicing Verification
 Grafana shows it, As uploaded in the project file folder and shown in the demo.
@@ -2040,9 +2073,21 @@ Packetrusher is a high-performance traffic generator and network testing tool th
 - Facilitates evaluation of the network's performance under different conditions.
  
 <p align="center">
-<img src="" width="1050"/>
-	 <p align="center">Figure 7.4: Throughput Monitoring</p>
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%209.38.34%E2%80%AFAM.png" width="1050"/>
+	 <p align="center">Figure 7.4: Throughput Monitoring </p>
 </p>
+
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%209.37.25%E2%80%AFAM.png" width="1050"/>
+	 <p align="center">Figure 7.5: Throughput Monitoring AMF</p>
+</p>
+
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/fbb2968d1669084d2d01a82a1245e7227907c973/Tests%20Snaps/Screenshot%202025-03-01%20at%206.04.36%E2%80%AFPM.png" width="1050"/>
+	 <p align="center">Figure 7.6: Ping Test</p>
+</p>
+
+
 
 
 ###  Additional Deployment Steps
