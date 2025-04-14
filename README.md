@@ -1500,6 +1500,15 @@ scrape_configs:
    ```
 We have access to all (amf, smf, upf) which are defined in our topology. As well as cadvisor, nrf other important components. Here we have shown the connection with Prometheus in the below screenshot. As we know it's still in the development process so, it doesn't support all functions of open5gs as stated on their webpage. The port:9090 is used by the NFs to send data to the Prometheus. 
 
+
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/9e77548ec1dc7624e422a9558b046c88e51b8549/Screenshots/Promotheus/a.png" width="1050"/>
+	 <p align="center">Figure 6.8: Prometheus[Old Picture, Later all connections were Sucessfully connected]</p>
+</p>
+
+
+
+
 ### 6.2. Dashboards in Grafana
 Grafana is used for 'Prometheus' visualizations and real-time monitoring. These are the following dashboards, we have created multiple dashboards to visualize our Prometheus data. Which include data received from (amf, upf, pcf, smf, cadvisor).Here are details of the included dashboards:  
 
@@ -1615,6 +1624,18 @@ Additionally, a Container Availability Alert (ContainerDown) has been configured
 
  `````
 
+
+
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/9e77548ec1dc7624e422a9558b046c88e51b8549/Screenshots/Promotheus/b.png" width="1050"/>
+	 <p align="center">Figure 6.8: Creating a Alert Rule through Grafana</p>
+</p>
+
+
+<p align="center">
+<img src="https://github.com/zakaahmadchishti/Slicing-UPF-SMF-UEs/blob/9e77548ec1dc7624e422a9558b046c88e51b8549/Screenshots/Promotheus/c.png" width="1050"/>
+	 <p align="center">Figure 6.8: Alert (Grafana)</p>
+</p>
 
 ### 6.5. Triggering Notifications and Webhook Communication
 
